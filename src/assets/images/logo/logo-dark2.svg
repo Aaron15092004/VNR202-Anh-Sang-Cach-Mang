@@ -1,0 +1,13 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vnrLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#40916c"/>
+      <stop offset="100%" stop-color="#1b4332"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="106" fill="url(#vnrLogoBg)" stroke="#f4a300" stroke-width="6"/>
+  <path
+    d="M110 46l14.6 44.6h46.9l-37.9 27.6 14.5 44.6-38.1-27.7-38.1 27.7 14.5-44.6-37.9-27.6h46.9z"
+    fill="#f4a300"
+  />
+</svg>

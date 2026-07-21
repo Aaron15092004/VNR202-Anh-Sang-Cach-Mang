@@ -1,0 +1,966 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.flip-game-container *,
+.flip-game-container *::before,
+.flip-game-container *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.flip-game-container article,
+.flip-game-container aside,
+.flip-game-container details,
+.flip-game-container figcaption,
+.flip-game-container figure,
+.flip-game-container footer,
+.flip-game-container header,
+.flip-game-container hgroup,
+.flip-game-container menu,
+.flip-game-container nav,
+.flip-game-container section {
+  display: block;
+}
+
+.flip-game-container img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.flip-game-container ol,
+.flip-game-container ul {
+  list-style: none;
+}
+
+.flip-game-container blockquote,
+.flip-game-container q {
+  quotes: none;
+}
+
+.flip-game-container blockquote:before,
+.flip-game-container blockquote:after,
+.flip-game-container q:before,
+.flip-game-container q:after {
+  content: "";
+  content: none;
+}
+
+.flip-game-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Container chính của game */
+.flip-game-container {
+  margin: 0;
+  font:
+    normal 0/0 "Lexend",
+    sans-serif;
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 48%, #f4a300 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-game-container .game-flipper,
+.flip-game-container .game-front,
+.flip-game-container .game-back,
+.flip-game-container .game-full-outer {
+  width: 100%;
+  height: 100%;
+}
+
+.flip-game-container.casual-mode,
+.flip-game-container.medium-mode,
+.flip-game-container.hard-mode {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Font-face */
+@font-face {
+  font-family: "GeneralFoundicons";
+  font-weight: normal;
+  font-style: normal;
+
+  src: url ("../../assets/fonts/flip/general_foundicons.eot");
+  src:
+    url("../../assets/fonts/flip/general_foundiconsd41d.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/flip/general_foundicons.woff") format("woff"),
+    url("../../assets/fonts/flip/general_foundicons.ttf") format("truetype"),
+    url(".../../assets/fonts/flip/general_foundicons.svg#GeneralFoundicons")
+      format("svg");
+}
+
+/* Links */
+.flip-game-container a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  font: bold 18px/75px "Lexend";
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0;
+  margin: 0 1px;
+}
+
+.flip-game-container a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.flip-game-container .online-logo a:hover {
+  background: none;
+}
+
+/* Social Media Styles */
+.flip-game-container .share-box-wrapper {
+  display: none;
+  float: left;
+  width: 100%;
+}
+
+.flip-game-container .share-box-inner {
+  margin: 0 auto;
+  display: table;
+  width: 40px;
+}
+
+.flip-game-container .social-media-main {
+  width: 50px;
+  height: 192px;
+  float: left;
+  position: fixed;
+  bottom: 10px;
+  z-index: 9;
+  right: 10px;
+  padding-top: 60px;
+}
+
+.flip-game-container .share-title {
+  font-size: 11px;
+  font-family: "Lexend", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-size: 30px 62px;
+  background-image: url("../../assets/images/flip/social-share.svg");
+  background-repeat: no-repeat;
+  background-position: 8px -23px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 3px 0;
+  color: #fff;
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  float: left;
+  position: absolute;
+  top: 145px;
+  left: 0;
+  cursor: pointer;
+  -moz-transition: top 0.2s linear 0s;
+  -webkit-transition: top 0.2s linear 0s;
+  transition: top 0.2s linear 0s;
+}
+
+.flip-game-container .share-title.open {
+  top: 0;
+  background-position: 10px 15px;
+}
+
+.flip-game-container .social-media-inner {
+  width: 100%;
+  height: 180px;
+  float: left;
+  margin: 0px;
+}
+
+.flip-game-container .social-media-head {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-family: "Lexend", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #ffffff;
+  text-align: center;
+  line-height: 110%;
+}
+
+.flip-game-container .social-media-icon {
+  width: 40px;
+  height: 40px;
+  float: left;
+  cursor: pointer;
+  background-image: url(../../assets/images/flip/social.svg);
+  background-size: 50px auto;
+  background-repeat: no-repeat;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.flip-game-container .twitter-color {
+  background-position: -4px -107px;
+  background-color: #2caafe;
+}
+
+.flip-game-container .google-color {
+  background-position: -4px -56px;
+  background-color: #fb443e;
+}
+
+.flip-game-container .whatsapp-color {
+  background-position: -4px -159px;
+  background-color: #13b345;
+}
+
+.flip-game-container .facebook-color {
+  background-color: #2b44a0;
+  background-position: -6px -5px;
+}
+
+/* Ad Slots */
+.flip-game-container .top-ad-main {
+  width: 100%;
+  height: auto;
+  float: left;
+  overflow: hidden;
+}
+
+.flip-game-container .top-ad-slot {
+  max-width: 970px;
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.flip-game-container .bottom-ad {
+  max-width: 300px;
+  margin: 30px auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Logo/Front Screen */
+.flip-game-container .game-logo {
+  width: 450px;
+  height: 450px;
+}
+
+.flip-game-container .game-logo .game-card {
+  width: 50%;
+  height: 50%;
+  cursor: default;
+  position: relative;
+}
+
+.flip-game-container .game-logo .game-card.left.active {
+  z-index: 2;
+}
+
+.flip-game-container .game-logo .game-card.left.active + .game-card {
+  opacity: 0;
+}
+
+.flip-game-container .game-logo .game-card.left.active .game-back {
+  margin-left: -100%;
+}
+
+.flip-game-container .game-logo .game-front {
+  font: normal 130px/225px "Lexend";
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.flip-game-container .game-logo .card-c2 {
+  transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+}
+
+.flip-game-container .game-logo .content-box {
+  width: 200%;
+  font: normal 12px/16px "Lexend";
+  text-align: left;
+}
+
+.flip-game-container .game-logo .content-box.levels {
+  width: 100%;
+}
+
+.flip-game-container .game-logo .content-box .padded {
+  padding: 0 15px;
+}
+
+.flip-game-container .game-logo .content-box .padded h2 {
+  color: white;
+}
+
+.flip-game-container .game-logo .content-box h2 {
+  font-size: 24px;
+  padding: 0;
+  margin: 28px 0;
+  text-transform: uppercase;
+}
+
+.flip-game-container .game-logo .content-box p {
+  line-height: 14px;
+  margin: 14px 0;
+}
+
+.flip-game-container .stats-container h2 i {
+  margin-right: 10px;
+  vertical-align: top;
+  font: italic normal 9px/8px "Lexend";
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.flip-game-container .stats-container ul {
+  width: 50%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  vertical-align: top;
+  line-height: 22px;
+}
+
+.flip-game-container .stats-container li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.flip-game-container .stats-container li b {
+  display: inline-block;
+  font-size: 12px;
+  width: 95px;
+}
+
+.flip-game-container .stats-container a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-left: -15px;
+}
+
+.flip-game-container .game-logo .game-info {
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 25px;
+}
+
+/* Game Screen */
+.flip-game-container .game-timer {
+  width: 0%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  background: #f4a300;
+  z-index: 1;
+}
+
+@-webkit-keyframes timer {
+  100% {
+    width: 100%;
+  }
+}
+
+@-moz-keyframes timer {
+  100% {
+    width: 100%;
+  }
+}
+
+@-o-keyframes timer {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes timer {
+  100% {
+    width: 100%;
+  }
+}
+
+.flip-game-container .game-pause {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: rgba(51, 51, 51, 0.78);
+}
+
+.flip-game-container .game-pause::before {
+  content: "PAUSED";
+  width: 100%;
+  position: absolute;
+  margin-top: -100px;
+  top: 50%;
+  background: #c0392b;
+  color: #fff;
+  font: bold 80px/200px "Lexend";
+  display: block;
+  text-align: center;
+}
+
+/* Card Styles */
+.flip-game-container .found {
+  display: inline-block;
+}
+
+.flip-game-container .game-card {
+  display: inline-block;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+}
+
+.flip-game-container .game-card:not(.active):hover {
+  opacity: 0.8;
+}
+
+.flip-game-container .game-card .game-back::before {
+  content: attr(data-f);
+  display: block;
+  font: normal 100px/100px "GeneralFoundicons";
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Flip Cards */
+.flip-game-container .game-flipper {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.flip-game-container .game-front,
+.flip-game-container .game-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.flip-game-container .game-front {
+  background: #1b4332;
+  background: -moz-linear-gradient(
+    -45deg,
+    #1b4332 0%,
+    #2d6a4f 49%,
+    #f4a300 50%,
+    #1b4332 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #1b4332 0%,
+    #2d6a4f 49%,
+    #f4a300 50%,
+    #1b4332 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #1b4332 0%,
+    #2d6a4f 49%,
+    #f4a300 50%,
+    #1b4332 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b4332', endColorstr='#1b4332', GradientType=1);
+  z-index: 1;
+}
+
+.flip-game-container .game-back {
+  background: #1b4332;
+  background: -moz-linear-gradient(
+    -45deg,
+    #1b4332 0%,
+    #1b4332 49%,
+    #f4a300 50%,
+    #2d6a4f 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #1b4332 0%,
+    #1b4332 49%,
+    #f4a300 50%,
+    #2d6a4f 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #1b4332 0%,
+    #1b4332 49%,
+    #f4a300 50%,
+    #2d6a4f 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b4332', endColorstr='#2d6a4f', GradientType=1);
+  opacity: 0;
+}
+
+.flip-game-container .game-card.active .game-back {
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Transitions */
+.flip-game-container .game-card,
+.flip-game-container .game-flipper,
+.flip-game-container .game-logo .game-back {
+  transition: 400ms;
+  -ms-transition: 400ms;
+  -webkit-transition: 400ms;
+  -moz-transition: 400ms;
+  -o-transition: 400ms;
+}
+
+.flip-game-container .game-card.active .game-flipper,
+.flip-game-container .game-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+.flip-game-container .game-logo .game-front,
+.flip-game-container .game-card .game-back::before,
+.flip-game-container .game-pause::before {
+  -webkit-text-stroke: 1px #fff;
+}
+
+/* Layout */
+.flip-game-container .game-box-outer {
+  background-image: url("../../assets/images/flip/box-ring.png");
+  background-repeat: no-repeat;
+  background-size: 639px 640px;
+  width: 640px;
+  height: 640px;
+  margin: 0px auto 0;
+  text-align: center;
+}
+
+.flip-game-container .game-box-outer::after {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flip-game-container .game-logo {
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flip-game-container .logo-inner {
+  width: 100%;
+  height: 100%;
+  -moz-box-shadow: 0px 0px 90px #f4a300;
+  -webkit-box-shadow: 0px 0px 90px #f4a300;
+  box-shadow: 0px 0px 90px #f4a300;
+}
+
+.flip-game-container .online-logo {
+  padding: 15px;
+}
+
+.flip-game-container .online-logo a {
+  font: inherit;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.flip-game-container .online-logo img {
+  max-width: 100%;
+}
+
+.flip-game-container .game-front.card-c3::after,
+.flip-game-container .game-front.card-c1::after,
+.flip-game-container .game-front.card-c4::after {
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: auto;
+  line-height: normal;
+  opacity: 0.4;
+  left: 10px;
+  text-align: center;
+}
+
+.flip-game-container .game-front.card-c1::after {
+  content: "Figures";
+}
+
+.flip-game-container .game-front.card-c3::after {
+  content: "Instructions";
+}
+
+.flip-game-container .game-front.card-c4::after {
+  content: "Play Now";
+}
+
+.flip-game-container .footer-wrapper {
+  text-align: center;
+  line-height: normal;
+  opacity: 0.5;
+  color: #fff;
+  font-size: 12px;
+  padding: 15px 15px 15px;
+}
+
+.flip-game-container .game-intro-wrapper {
+  padding-top: 60px;
+}
+
+/* Common Header Styles */
+.flip-game-container .common-header {
+  padding: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 11111111;
+}
+
+.flip-game-container .common-logo {
+  flex-grow: 1;
+  min-width: 250px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.flip-game-container .common-header a {
+  line-height: 1;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.flip-game-container .top-right a:hover {
+  background: none;
+}
+
+.flip-game-container .mobile-logo {
+  display: none;
+}
+
+/* Game area chỉ hiển thị khi đang chơi */
+.flip-game-container .game-area {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #2c3e50;
+}
+
+/* Chỉ hiện khi có class difficulty */
+.flip-game-container .game-area.casual,
+.flip-game-container .game-area.medium,
+.flip-game-container .game-area.hard {
+  display: block;
+}
+/* Responsive Design */
+@media all and (min-width: 1100px) {
+  .flip-game-container .game-logo .game-card {
+    cursor: pointer;
+  }
+  .flip-game-container .game-logo .game-card.active.twist {
+    cursor: default;
+  }
+}
+
+@media only screen and (min-width: 1090px) {
+  .flip-game-container .game-box-outer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 60px;
+  }
+  .flip-game-container .game-intro-wrapper {
+    padding: 10px 0 10px;
+    text-align: center;
+  }
+  .flip-game-container .game-intro-wrapper {
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 435px) and (min-height: 530px) {
+  .flip-game-container .game-full-outer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .flip-game-container .game-intro-wrapper {
+    min-height: 530px;
+  }
+  .flip-game-container .game-area {
+    display: none;
+  }
+  .flip-game-container.casual-mode .game-area,
+  .flip-game-container.medium-mode .game-area,
+  .flip-game-container.hard-mode .game-area {
+    display: block;
+  }
+}
+
+@media all and (max-width: 1680px) and (min-width: 640px) {
+  .flip-game-container .game-card .game-back::before {
+    font-size: 90px;
+  }
+  .flip-game-container.medium-mode .game-card .game-back::before {
+    font-size: 70px;
+  }
+  .flip-game-container.hard-mode .game-card .game-back::before {
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 640px) and (min-width: 470px) {
+  .flip-game-container .game-card .game-back::before {
+    font-size: 90px;
+  }
+  .flip-game-container.medium-mode .game-card .game-back::before {
+    font-size: 60px;
+  }
+  .flip-game-container.hard-mode .game-card .game-back::before {
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 470px) and (min-width: 0px) {
+  .flip-game-container .game-card .game-back::before {
+    font-size: 60px;
+  }
+  .flip-game-container.medium-mode .game-card .game-back::before {
+    font-size: 35px;
+    -webkit-text-stroke: 0;
+  }
+  .flip-game-container.hard-mode .game-card .game-back::before {
+    font-size: 32px;
+    -webkit-text-stroke: 0;
+  }
+}
+
+@media all and (max-width: 640px) and (min-width: 0px) {
+  .flip-game-container a {
+    line-height: 50px;
+    font-size: 13px;
+  }
+  .flip-game-container .game-logo {
+    width: 300px;
+    height: 300px;
+    margin-top: -25px;
+  }
+  .flip-game-container .game-logo .game-front {
+    font: normal 80px/150px "Lexend";
+  }
+  .flip-game-container .game-logo .content-box h2 {
+    font-size: 16px;
+    margin: 24px 0;
+  }
+  .flip-game-container .game-logo .instructions h2 {
+    display: none;
+  }
+  .flip-game-container .game-logo .instructions.content-box p:nth-child(3) {
+    display: none;
+  }
+  .flip-game-container .stats-container li b {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .flip-game-container .game-box-outer {
+    background-size: 420px 420px;
+    width: 420px;
+    height: 420px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .flip-game-container .game-box-outer {
+    background-image: none;
+    width: auto;
+    height: auto;
+    margin-top: 40px;
+    min-height: 360px;
+  }
+  .flip-game-container .game-logo {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flip-game-container .web-logo {
+    display: none;
+  }
+  .flip-game-container .mobile-logo {
+    display: block;
+  }
+  .flip-game-container .common-logo {
+    max-width: 40px;
+    min-width: 40px;
+  }
+}
+
+/* Uppercase info text */
+.flip-game-container .info-uppercase {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.flip-game-container .game-name h1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 800;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: white;
+  position: relative;
+  color: #eef7ff;
+}
+.flip-game-container .game-name h1:before {
+  content: attr(data-text);
+  position: absolute;
+  background: linear-gradient(#1b4332, #2d6a4f, #f4a300, #2d6a4f, #1b4332);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 100% 90%;
+  line-height: 0.9;
+  clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  animation: swing 5s infinite;
+  animation-direction: alternate;
+}
+@keyframes swing {
+  0% {
+    -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
+    clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  }
+  50% {
+    -webkit-clip-path: ellipse(120px 120px at 49.66% 64.36%);
+    clip-path: ellipse(120px 120px at 49.66% 64.36%);
+  }
+  100% {
+    -webkit-clip-path: ellipse(120px 120px at 102.62% -1.61%);
+    clip-path: ellipse(120px 120px at 102.62% -1.61%);
+  }
+}
+
+/* Back Home Button - giống trang Courses */
+.flip-game-container .back-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #2d6a4f, #1b4332);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+  line-height: 1.2 !important;
+}
+
+.flip-game-container .back-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 163, 0, 0.4);
+  color: white;
+  background: linear-gradient(135deg, #f4a300, #2d6a4f);
+}
+
+.flip-game-container .back-home-btn i {
+  font-size: 18px;
+}
+
+/* Responsive cho nút Back */
+@media (max-width: 768px) {
+  .flip-game-container .back-home-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .flip-game-container .back-home-btn i {
+    font-size: 16px;
+  }
+
+  .flip-game-container .back-text {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .flip-game-container .back-home-btn {
+    padding: 8px 12px;
+  }
+
+  .flip-game-container .back-home-btn i {
+    font-size: 20px;
+  }
+}
+
+/* Xóa style cũ của arrow-icon */
+.flip-game-container .arrow-icon {
+  background-image: none;
+  padding-left: 0;
+}

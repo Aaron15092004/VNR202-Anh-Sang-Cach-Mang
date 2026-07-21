@@ -1,0 +1,966 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.tuvi-container-wrapper {
+  margin: 0;
+  padding-bottom: 3rem;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(120, 150, 255, 0.24), transparent 34%),
+    linear-gradient(135deg, #0f1f3f, #23145f);
+}
+
+.tuvi-container-wrapper canvas {
+  position: fixed !important;
+  z-index: 0 !important;
+  top: 0;
+  left: 0;
+}
+
+.tuvi-container-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tuvi-container-wrapper .container-2 {
+  min-width: 13rem;
+}
+
+.tuvi-container-wrapper a {
+  color: #9bbcff;
+  text-decoration: none;
+}
+
+.tuvi-container-wrapper a:hover {
+  color: #c8d7ff;
+}
+
+.tuvi-container-wrapper h1,
+.tuvi-container-wrapper h2,
+.tuvi-container-wrapper h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.tuvi-container-wrapper h1 {
+  font-size: 3rem;
+}
+
+.tuvi-container-wrapper h1 small {
+  font-size: 80%;
+  color: #777;
+}
+
+.tuvi-container-wrapper h2 {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.tuvi-container-wrapper p {
+  margin-top: 0;
+}
+
+.tuvi-container-wrapper .container-2 > p {
+  margin: 0.5rem auto 1rem;
+  max-width: 800px;
+}
+
+.tuvi-container-wrapper hr {
+  max-width: 100px;
+  margin: 3rem auto;
+  border: 0;
+  border-top: 0.1rem solid #eee;
+}
+
+.tuvi-container-wrapper code {
+  padding: 0.15rem 0.3rem;
+  font-family: Menlo, "Courier New", monospace;
+  font-size: 90%;
+  color: #cd3333;
+  background-color: #f5f5f5;
+  border-radius: 0.15rem;
+}
+
+/* Display utility classes */
+
+.tuvi-container-wrapper .inline-block {
+  display: inline-block;
+}
+
+.tuvi-container-wrapper .back-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  --c1: #101d42;
+  --c2: #9bbcff;
+  --size-letter: 24px;
+  padding: 0.5em 1em;
+  font-size: var(--size-letter);
+  background-color: transparent;
+  border: calc(var(--size-letter) / 6) solid var(--c2);
+  border-radius: 0.2em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.tuvi-container-wrapper .back-home > .text {
+  font-weight: 700;
+  color: var(--c2);
+  position: relative;
+  z-index: 1;
+  transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.tuvi-container-wrapper .back-home::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 150%;
+  aspect-ratio: 1/1;
+  scale: 0;
+  transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+  background-color: var(--c2);
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+}
+
+.tuvi-container-wrapper .back-home::after {
+  top: 100%;
+  left: 100%;
+  content: "";
+  width: 150%;
+  aspect-ratio: 1/1;
+  scale: 0;
+  transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+  background-color: var(--c2);
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+}
+
+.tuvi-container-wrapper .back-home:hover {
+  & > span {
+    color: var(--c1);
+  }
+  &::before,
+  &::after {
+    scale: 1;
+  }
+}
+
+.tuvi-container-wrapper .back-home:active {
+  scale: 0.98;
+  filter: brightness(0.9);
+}
+
+/* Masthead */
+
+.tuvi-container-wrapper .masthead {
+  padding: 5.5rem 1rem 4rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  /*background-color: #b94a48;*/
+}
+
+.tuvi-container-wrapper .masthead a,
+.tuvi-container-wrapper .masthead strong {
+  font-weight: normal;
+  color: #fff;
+}
+
+.tuvi-container-wrapper .masthead p {
+  font-size: 1.25rem;
+}
+
+/* Make it red for easy views */
+
+.tuvi-container-wrapper .grid-example {
+  margin-bottom: 1rem;
+}
+
+.tuvi-container-wrapper .grid-example .col {
+  line-height: 3;
+  text-align: center;
+  /*background-color: rgba(255, 0, 0, .15);*/
+}
+
+/* Nested grid examples need outdenting because padding. */
+
+.tuvi-container-wrapper .grid-example .grid-example {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Increase height of vertically centered example */
+
+.tuvi-container-wrapper .grid-example .grid-align-middle {
+  height: 200px;
+}
+
+.tuvi-container-wrapper .grid-example.grid-align-middle .col {
+  min-height: 3rem;
+  line-height: 1.5;
+}
+
+.tuvi-container-wrapper .container-2 {
+  max-width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tuvi-container-wrapper .laso {
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  background-image: url("../../assets/images/texture.jpg");
+}
+
+.tuvi-container-wrapper .cung-top,
+.tuvi-container-wrapper .cung-bottom {
+  height: 25px;
+  margin: 2px 2px 0 0;
+}
+
+.tuvi-container-wrapper .cung-middle {
+  height: 260px;
+}
+
+.tuvi-container-wrapper .cung-middle ul,
+.tuvi-container-wrapper .cung-middle li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tuvi-container-wrapper .hanhKim {
+  color: #9e9e9e;
+}
+
+.tuvi-container-wrapper .hanhMoc {
+  color: #4caf50;
+}
+
+.tuvi-container-wrapper .hanhThuy {
+  color: #000100;
+}
+
+.tuvi-container-wrapper .hanhHoa {
+  color: #a71a14;
+}
+
+.tuvi-container-wrapper .hanhTho {
+  color: #e6bd37;
+}
+
+.tuvi-container-wrapper .chinhTinh {
+  min-height: 35px;
+  padding-bottom: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tuvi-container-wrapper .cungChu {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  padding-bottom: 0.2em;
+}
+
+.tuvi-container-wrapper .cungThan {
+  background-color: darkred;
+}
+
+.tuvi-container-wrapper .xungChieu {
+  background-color: #d7ccc8;
+}
+
+.tuvi-container-wrapper .diaCung {
+  width: 220px;
+  height: 280px;
+}
+
+.tuvi-container-wrapper .thienBan {
+  width: 400px;
+  height: 635px;
+  position: relative;
+}
+
+.tuvi-container-wrapper .thienBan .noidung {
+  padding: 5px 10px 10px 10px;
+  text-align: justify;
+}
+
+.tuvi-container-wrapper .thienBan .noidung .header {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.tuvi-container-wrapper .thienBan .noidung .sinhkhac {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.tuvi-container-wrapper .thienBan .noidung .cotTrai {
+  text-align: left;
+  font-weight: bold;
+}
+
+.tuvi-container-wrapper .thienBan .noidung .cotPhai {
+  text-align: left;
+  line-height: 1.5em;
+}
+
+.tuvi-container-wrapper .thienBan .mausac {
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+}
+
+.tuvi-container-wrapper .thienBan .mausac .gioithieuhanh {
+  /*    width: 50px;*/
+  font-weight: bold;
+}
+
+.tuvi-container-wrapper input {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tuvi-container-wrapper form {
+  color: #000;
+  text-align: left;
+}
+
+.tuvi-container-wrapper label {
+  padding-right: 2rem;
+}
+
+.tuvi-container-wrapper input,
+.tuvi-container-wrapper select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tuvi-container-wrapper input:focus,
+.tuvi-container-wrapper select:focus {
+  outline: none;
+  border-color: #9bbcff;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(120, 150, 255, 0.24);
+}
+
+/* Style cho options trong dropdown - ĐÂY LÀ PHẦN QUAN TRỌNG */
+.tuvi-container-wrapper select option {
+  background-color: #333; /* Nền tối cho dropdown */
+  color: #fff; /* Chữ trắng */
+  padding: 0.5rem;
+}
+
+/* Style khi hover option */
+.tuvi-container-wrapper select option:hover {
+  background-color: #3626b2;
+}
+
+/* Style cho option được chọn */
+.tuvi-container-wrapper select option:checked {
+  background-color: #3626b2;
+}
+
+.tuvi-container-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  accent-color: #9bbcff;
+}
+
+.tuvi-container-wrapper .grid .left {
+  width: 30%;
+  text-align: right;
+}
+
+.tuvi-container-wrapper .grid .right {
+  width: 70%;
+}
+
+.tuvi-container-wrapper .formborder {
+  border: 3px solid #ffffff;
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  border-radius: 45px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+}
+
+.tuvi-container-wrapper .border {
+  border: thin #a8a8a8 solid;
+}
+
+.tuvi-container-wrapper .border-right {
+  border-right: thin #a8a8a8 solid;
+}
+
+.tuvi-container-wrapper .border-left {
+  border-left: thin #a8a8a8 solid;
+}
+
+.tuvi-container-wrapper .border-bottom {
+  border-bottom: thin #a8a8a8 solid;
+}
+
+.tuvi-container-wrapper .border-top {
+  border-top: thin #a8a8a8 solid;
+}
+
+.tuvi-container-wrapper .inset-border {
+  box-sizing: border-box;
+}
+
+.tuvi-container-wrapper .button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #e0e1e2;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 0 0.25em 0 0;
+  padding: 0.78571429em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.28571429rem;
+  box-shadow:
+    0 0 0 1px transparent inset,
+    0 0 0 0 rgba(34, 36, 38, 0.15) inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition:
+    opacity 0.1s ease,
+    background-color 0.1s ease,
+    color 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.1s ease;
+  transition:
+    opacity 0.1s ease,
+    background-color 0.1s ease,
+    color 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.1s ease;
+  will-change: "";
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tuvi-container-wrapper .button.primary {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tuvi-container-wrapper .button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tuvi-container-wrapper input.primary:hover {
+  background-color: #2919a5;
+  color: #fff;
+  text-shadow: none;
+}
+
+.tuvi-container-wrapper input.warning {
+  background-color: #f0ad4e;
+  color: #fff;
+  text-shadow: none;
+}
+
+.tuvi-container-wrapper input.primary {
+  background-color: #3626b2;
+  color: #fff;
+  text-shadow: none;
+}
+
+.tuvi-container-wrapper .phuTinh .saotot {
+  width: 46%;
+  line-height: 1.3em;
+  text-align: left;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+  max-height: 120px;
+  font-weight: bold;
+}
+
+.tuvi-container-wrapper .phuTinh .saoxau {
+  width: 46%;
+  line-height: 1.3em;
+  display: inline-block;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.tuvi-container-wrapper .blocks {
+  width: 46%;
+  white-space: nowrap;
+  display: inline-block;
+  /*overflow: hidden;
+    text-overflow: ellipsis;*/
+  line-height: 1.2em;
+  font-size: 14px;
+}
+
+.tuvi-container-wrapper .hide {
+  width: 46%;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 14px;
+  height: 0;
+  overflow: hidden;
+}
+
+/*@media (min-width: 600px) {*/
+
+.tuvi-container-wrapper .grid {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tuvi-container-wrapper .col {
+  display: table-cell;
+}
+
+.tuvi-container-wrapper .thongtin {
+  padding-bottom: 1.5rem;
+  align-items: center;
+}
+
+.tuvi-container-wrapper .thongtinngaysinh {
+  align-items: center;
+}
+
+.tuvi-container-wrapper .grid-padded {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+/*.grid-padded .grid {
+    border-spacing: 1rem 0;
+}*/
+
+.tuvi-container-wrapper .label {
+  display: inline;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 90%;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
+
+.tuvi-container-wrapper .label-tuan {
+  background-color: #3e2723;
+}
+
+.tuvi-container-wrapper .label-triet {
+  background-color: #263238;
+}
+
+.tuvi-container-wrapper .tuanTriet {
+  padding-top: 0.5rem;
+}
+
+/*}*/
+
+/*@media (min-width: 600px) {*/
+
+.tuvi-container-wrapper .col-1 {
+  width: 8.333333%;
+}
+
+.tuvi-container-wrapper .col-2 {
+  width: 16.666667%;
+}
+
+.tuvi-container-wrapper .col-3 {
+  width: 25%;
+}
+
+.tuvi-container-wrapper .col-4 {
+  width: 33.333333%;
+}
+
+.tuvi-container-wrapper .col-5 {
+  width: 41.666667%;
+}
+
+.tuvi-container-wrapper .col-6 {
+  width: 50%;
+}
+
+.tuvi-container-wrapper .col-7 {
+  width: 58.333333%;
+}
+
+.tuvi-container-wrapper .col-8 {
+  width: 66.666667%;
+}
+
+.tuvi-container-wrapper .col-9 {
+  width: 75%;
+}
+
+.tuvi-container-wrapper .col-10 {
+  width: 83.333333%;
+}
+
+.tuvi-container-wrapper .col-11 {
+  width: 91.666667%;
+}
+
+.tuvi-container-wrapper .grid-align-middle .col {
+  vertical-align: middle;
+}
+
+.tuvi-container-wrapper .grid-reverse {
+  direction: rtl;
+}
+
+.tuvi-container-wrapper .grid-reverse .col {
+  direction: ltr;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip {
+  position: absolute;
+  z-index: 8000;
+  background: transparent;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Message {
+  position: relative;
+  padding: 15px;
+  font-size: inherit;
+  text-align: left;
+  font-weight: normal;
+  line-height: inherit;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  *margin-right: 0;
+  _width: expression(document.body.clientWidth > 250 ? "250px": "auto");
+  /* max-width for IE6 */
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow {
+  position: absolute;
+  height: 10px;
+  width: 20px;
+  overflow: hidden;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow_Bottom {
+  bottom: 0;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow_Top {
+  top: 0;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow div {
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  left: 0;
+  _border-left-color: pink;
+  _border-right-color: pink;
+  _filter: chroma(color=pink);
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow_Bottom div {
+  top: 0;
+  _border-bottom-color: pink;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Arrow_Top div {
+  bottom: 0;
+  _border-top-color: pink;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Close {
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.tuvi-container-wrapper .Zebra_Tooltip .Zebra_Tooltip_Close:hover {
+  color: #c40000;
+}
+
+.tuvi-container-wrapper .tooltips {
+  cursor: help;
+}
+
+/* Mobile Responsive - CHỈ THU NHỎ LÁ SỐ, KHÔNG ĐỔI VỊ TRÍ */
+
+@media screen and (max-width: 768px) {
+  .tuvi-container-wrapper {
+    font-size: 12px;
+    padding-bottom: 1rem;
+  }
+
+  .tuvi-container-wrapper h1 {
+    font-size: 1.8rem;
+  }
+
+  .tuvi-container-wrapper h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .tuvi-container-wrapper .masthead {
+    padding: 4.8rem 0.5rem 2rem;
+  }
+
+  .tuvi-container-wrapper .container-2 {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .tuvi-container-wrapper .formborder {
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  /* Form inputs */
+  .tuvi-container-wrapper input,
+  .tuvi-container-wrapper select {
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+
+  /* Grid layout cho form */
+  .tuvi-container-wrapper .grid.thongtin {
+    display: block;
+  }
+
+  .tuvi-container-wrapper .grid.thongtin .col {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .tuvi-container-wrapper .grid.thongtin .col-3 {
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+
+  .tuvi-container-wrapper .grid.thongtinngaysinh {
+    display: flex;
+    gap: 5px;
+  }
+
+  .tuvi-container-wrapper .grid.thongtinngaysinh .col {
+    flex: 1;
+    width: auto !important;
+  }
+
+  /* Button */
+  .tuvi-container-wrapper .button.primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* ==================== LÁ SỐ NHỎ ==================== */
+
+  /* ===== LÁ SỐ - Scale xuống 70% ===== */
+  .tuvi-container-wrapper .anlaso {
+    height: auto !important;
+    transform: scale(0.47);
+    transform-origin: top center;
+    width: 265%;
+    margin-left: -83%;
+    margin-bottom: -251%;
+    margin-top: -10%;
+  }
+
+  .tuvi-container-wrapper .laso {
+    height: auto;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tuvi-container-wrapper h1 {
+    font-size: 0.5rem;
+  }
+
+  /* Lá số scale xuống 50% cho màn hình nhỏ */
+  .tuvi-container-wrapper .anlaso {
+    transform: scale(0.47);
+    width: 265%;
+    margin-left: -83%;
+    margin-bottom: -251%;
+    margin-top: -10%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  /* iPhone SE và các màn hình rất nhỏ */
+  .tuvi-container-wrapper .anlaso {
+    transform: scale(0.47);
+    width: 265%;
+    margin-left: -83%;
+    margin-bottom: -251%;
+    margin-top: -10%;
+  }
+}
+
+/* ==================== RESPONSIVE NÚT BACK HOME ==================== */
+
+@media screen and (max-width: 768px) {
+  .tuvi-container-wrapper .back-home {
+    top: 10px;
+    left: 10px;
+    padding: 0.4em 0.8em;
+    font-size: 16px;
+    border-width: calc(16px / 6);
+  }
+
+  .tuvi-container-wrapper .back-home > .text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tuvi-container-wrapper .back-home {
+    top: 10px;
+    left: 10px;
+    padding: 0.35em 0.7em;
+    font-size: 14px;
+    border-width: calc(14px / 6);
+  }
+
+  .tuvi-container-wrapper .back-home > .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tuvi-container-wrapper .back-home {
+    top: 8px;
+    left: 8px;
+    padding: 0.3em 0.6em;
+    font-size: 12px;
+    border-width: calc(12px / 6);
+  }
+
+  .tuvi-container-wrapper .back-home > .text {
+    font-size: 11px;
+  }
+}
+
+/* Nếu muốn ẩn chữ "Back Home" trên mobile, chỉ giữ icon */
+@media screen and (max-width: 480px) {
+  .tuvi-container-wrapper .back-home > .text::before {
+    content: "Home";
+    font-size: 16px;
+  }
+
+  .tuvi-container-wrapper .back-home > .text {
+    font-size: 0; /* Ẩn chữ */
+  }
+
+  .tuvi-container-wrapper .back-home {
+    padding: 0.5em;
+    width: 60px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Luận giải styling */
+.luan-giai-content {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.luan-giai-content h4 {
+  scroll-margin-top: 100px;
+}
+
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

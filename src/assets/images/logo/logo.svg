@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150">
+  <defs>
+    <linearGradient id="quizLogoBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#40916c"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="150" rx="14" fill="url(#quizLogoBg)"/>
+  <text
+    x="260"
+    y="82"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="46"
+    font-weight="800"
+    fill="#ffffff"
+  >VNR202</text>
+  <text
+    x="260"
+    y="118"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="22"
+    font-weight="700"
+    fill="#f4a300"
+  >LEARNING</text>
+</svg>
