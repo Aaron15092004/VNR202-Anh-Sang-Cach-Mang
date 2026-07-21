@@ -452,46 +452,40 @@ const MainContent = () => {
                                         </p>
 
                                         <div className="vnr-feature-cards">
-                                          <Link to="/quiz" className="vnr-feature-card vnr-feature-card--quiz">
-                                            <div className="vnr-feature-card-head">
-                                              <i className="bi bi-pencil-square vnr-feature-card-icon"></i>
-                                              <div className="vnr-feature-card-badge">Trắc nghiệm</div>
+                                          <Link to="/quiz" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-icon">
+                                              <i className="bi bi-pencil-square"></i>
                                             </div>
-                                            <div className="vnr-feature-card-body">
-                                              <h4>Trắc nghiệm VNR202</h4>
-                                              <p>Rèn giũa trí tuệ qua từng câu hỏi, khắc sâu mỗi chặng đường lịch sử vẻ vang của Đảng.</p>
-                                              <span className="vnr-feature-card-cta">
-                                                Bắt đầu ôn tập <i className="bi bi-arrow-right"></i>
-                                              </span>
-                                            </div>
+                                            <div className="vnr-feature-card-badge">Trắc nghiệm</div>
+                                            <h4>Trắc nghiệm VNR202</h4>
+                                            <p>Rèn giũa trí tuệ qua từng câu hỏi, khắc sâu mỗi chặng đường lịch sử vẻ vang của Đảng.</p>
+                                            <span className="vnr-feature-card-cta">
+                                              Bắt đầu <i className="bi bi-arrow-right"></i>
+                                            </span>
                                           </Link>
 
-                                          <Link to="/flip" className="vnr-feature-card vnr-feature-card--flip">
-                                            <div className="vnr-feature-card-head">
-                                              <i className="bi bi-collection vnr-feature-card-icon"></i>
-                                              <div className="vnr-feature-card-badge">Thẻ nhớ</div>
+                                          <Link to="/flip" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-icon">
+                                              <i className="bi bi-collection"></i>
                                             </div>
-                                            <div className="vnr-feature-card-body">
-                                              <h4>Lật Thẻ VNR202</h4>
-                                              <p>Lật mở từng trang sử vàng — khắc ghi nhân vật, mốc son và cột mốc hào hùng chỉ trong chớp mắt.</p>
-                                              <span className="vnr-feature-card-cta">
-                                                Chơi thẻ nhớ <i className="bi bi-arrow-right"></i>
-                                              </span>
-                                            </div>
+                                            <div className="vnr-feature-card-badge">Thẻ nhớ</div>
+                                            <h4>Lật Thẻ VNR202</h4>
+                                            <p>Lật mở từng trang sử vàng — khắc ghi nhân vật, mốc son và cột mốc hào hùng chỉ trong chớp mắt.</p>
+                                            <span className="vnr-feature-card-cta">
+                                              Chơi thẻ <i className="bi bi-arrow-right"></i>
+                                            </span>
                                           </Link>
 
-                                          <Link to="/game" className="vnr-feature-card vnr-feature-card--game">
-                                            <div className="vnr-feature-card-head">
-                                              <i className="bi bi-crosshair vnr-feature-card-icon"></i>
-                                              <div className="vnr-feature-card-badge">Game</div>
+                                          <Link to="/game" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-icon">
+                                              <i className="bi bi-crosshair"></i>
                                             </div>
-                                            <div className="vnr-feature-card-body">
-                                              <h4>Pháo Binh Điện Biên</h4>
-                                              <p>Điều khiển pháo binh, tiêu diệt cứ điểm Him Lam, Đồi A1 và hầm De Castries trong chiến dịch Điện Biên Phủ.</p>
-                                              <span className="vnr-feature-card-cta">
-                                                Vào chơi <i className="bi bi-arrow-right"></i>
-                                              </span>
-                                            </div>
+                                            <div className="vnr-feature-card-badge">Game</div>
+                                            <h4>Pháo Binh Điện Biên</h4>
+                                            <p>Điều khiển pháo binh, tiêu diệt cứ điểm Him Lam, Đồi A1 và hầm De Castries trong chiến dịch Điện Biên Phủ.</p>
+                                            <span className="vnr-feature-card-cta">
+                                              Vào chơi <i className="bi bi-arrow-right"></i>
+                                            </span>
                                           </Link>
                                         </div>
                                       </div>
