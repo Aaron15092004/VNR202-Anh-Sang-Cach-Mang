@@ -200,6 +200,10 @@ export default function ArtilleryGame() {
   const [elapsed, setElapsed] = useState(0);
   const [endStats, setEndStats] = useState(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   audio.current.setMuted(muted);
 
   const stateRef = useRef({
