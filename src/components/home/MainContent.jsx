@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 const heroCover = "/hero/flag-cover.png";
 const archivePoster = "/dang-95-nam.svg";
 
-const oldQuizBadge =
-  "https://lmsstyle.com/theme/new-learning/pluginfile.php/1/local_mb2builder/images/cloud-playgrounds.jpg";
-const oldFlipBadge =
-  "https://lmsstyle.com/theme/new-learning/pluginfile.php/1/local_mb2builder/images/professional-certificates.jpg";
-const oldTuviBadge =
-  "https://lmsstyle.com/theme/new-learning/pluginfile.php/1/local_mb2builder/images/learn-with-experts.jpg";
 const oldQuoteBadge =
   "https://lmsstyle.com/theme/new-learning/pluginfile.php/1/local_mb2builder/images/demo_logos.png";
 const oldShapeBackground =
@@ -65,124 +59,9 @@ const MainContent = () => {
 
   return (
     <div className="pagelayout-content d-flex flex-column">
-      {/* Page Header */}
-      <div id="page-header" className="nobg">
-        <div className="inner">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="page-heading flexcols">
-                  <div className="page-header-left position-relative">
-                    <h1 className="heding h2 iscurse maincoursepage">
-                      <a
-                        className="d-inline-block w-100"
-                        href="/courses"
-                        tabIndex="-1"
-                      >
-                        <span className="course-backtext">VNR202</span>
-                        Lich su Dang Cong san Viet Nam
-                      </a>
-                    </h1>
-                  </div>
-                  <div className="page-header-right position-relative d-flex flex-wrap align-items-end"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Breadcrumb */}
-        <div className="page-breadcrumb position-relative breadcrumb_modern">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="flexcols">
-                  <div className="breadcrumb">
-                    <nav aria-label="Navigation bar">
-                      <ol className="breadcrumb">
-                        <li className="breadcrumb-item">
-                          <a href="/">Trang chủ</a>
-                        </li>
-                        <li className="breadcrumb-item">
-                          <a href="/courses">Chuyên đề</a>
-                        </li>
-                        <li className="breadcrumb-item">
-                          <a href="/courses">Ánh Sáng Của Đảng</a>
-                        </li>
-                        <li className="breadcrumb-item">
-                          <a
-                            href="/courses"
-                            aria-current="page"
-                            title="Lich su Dang Cong san Viet Nam"
-                          >
-                            Lich su Dang Cong san Viet Nam
-                          </a>
-                        </li>
-                      </ol>
-                    </nav>
-                  </div>
-                  <div className="actions d-flex flex-wrap align-items-center"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Secondary Navigation */}
-      <div className="page-secnav position-relative">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="secondary-navigation"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
+      {/* Page Content */}
       <div className="page-b">
-        <div className="mb2notices"></div>
         <div id="main-content">
-          <div className="container-fluid">
-            <div id="theme-main-content" className="row">
-              <section className="content-col col-lg-12">
-                <div id="region-main">
-                  <div id="page-content">
-                    <span
-                      className="notifications"
-                      id="user-notifications"
-                    ></span>
-                    <span id="maincontent"></span>
-
-                    {/* Page Context Header */}
-                    <div className="page-context-header m-0 p-0">
-                      <h2 className="activity-name">
-                        Lich su Dang Cong san Viet Nam
-                      </h2>
-                    </div>
-
-                    {/* Activity Header */}
-                    <div
-                      className="activity-header d-flex justify-content-between align-items-center"
-                      data-for="page-activity-header"
-                    >
-                      <div className="activity-header-moo">
-                        <span className="sr-only">Completion requirements</span>
-                        <div
-                          data-region="activity-information"
-                          data-activityname="Lich su Dang Cong san Viet Nam"
-                          className="activity-information"
-                        ></div>
-                      </div>
-                    </div>
-
-                    {/* Main Content Role */}
-                    <div role="main">
-                      <div className="box py-3 generalbox center clearfix">
-                        <div className="no-overflow"></div>
-                      </div>
-                    </div>
 
                     {/* Page Builder Content */}
                     <div className="mb2-pb-fpsection position-relative pre-bg0 hidden0 light">
@@ -560,332 +439,51 @@ const MainContent = () => {
                                             </div>
                                           </div>
                                         </div>
-                                        <h4
-                                          className="heading heading-none upper0 fwglobal lhglobal pbtsize-2"
-                                          id="typed_69724aa54461f"
-                                          style={{
-                                            "--mb2-pb-heading-tbshadow": "0px",
-                                            "--mb2-pb-heading-tcshadow":
-                                              "transparent",
-                                            "--mb2-pb-heading-thshadow":
-                                              "0.06em",
-                                            "--mb2-pb-heading-tvshadow":
-                                              "0.04em",
-                                            fontSize: "2.3rem",
-                                            marginBottom: "15px",
-                                            marginLeft: "auto",
-                                            marginRight: "auto",
-                                            marginTop: "0px",
-                                            maxWidth: "2000px",
-                                          }}
-                                        >
-                                          <span
-                                            className="headingtext fwglobal nline0"
-                                            style={{ color: "#2d6a4f" }}
-                                          >
-                                            Tôi Luyện Bản Lĩnh Qua Từng Thử
-                                            Thách
-                                          </span>
-                                        </h4>
-                                        <div
-                                          className="theme-text"
-                                          style={{
-                                            marginBottom: "50px",
-                                            marginLeft: "auto",
-                                            marginRight: "auto",
-                                            maxWidth: "1994px",
-                                          }}
-                                        >
-                                          <div
-                                            className="theme-text-inner align-none text- rounded0 gradient0 light"
-                                            style={{
-                                              "--mb2-pb-graddeg": "180deg",
-                                            }}
-                                          >
-                                            <div
-                                              className="theme-text-text upper0 fwglobal lhglobal"
-                                              style={{
-                                                fontSize: "1rem",
-                                              }}
-                                            >
-                                              <p>
-                                                Hòa quyện lý luận sắc bén,
-                                                những dấu son lịch sử và trải
-                                                nghiệm ôn luyện sống động —
-                                                tiếp thêm bản lĩnh để bạn vững
-                                                bước trên con đường Đảng đã
-                                                chọn.
-                                              </p>
-                                            </div>
-                                          </div>
+                                        <div className="vnr-section-label">
+                                          <span>Tôi Luyện Bản Lĩnh</span>
                                         </div>
-                                        <div
-                                          className="theme-boxes theme-boxesimg type-4 gutter-normal theme-col-3 smtitle1 rounded0 wave0 paddingm linkbtn2 btnhor0 theme-boxesimg shadow1 itemlink0 tcenter0 boxcolor-primary center1 clearfix"
-                                          style={{
-                                            "--mb2-pb-bxbgcolor":
-                                              "rgba(244, 163, 0, 0.12)",
-                                            "--mb2-pb-bxbocolor":
-                                              "rgb(45, 106, 79)",
-                                          }}
-                                        >
-                                          <div className="theme-box el_onmobile1">
-                                            <div
-                                              className="theme-boximg position-relative"
-                                              style={{
-                                                "--mb2-pb-bxbgcolor":
-                                                  "rgba(244, 163, 0, 0.12)",
-                                                "--mb2-pb-bxbocolor":
-                                                  "rgb(45, 106, 79)",
-                                                "--mb2-pb-bxborder": "2px",
-                                              }}
-                                            >
-                                              <div className="box-allcontent">
-                                                <div className="box-image">
-                                                  <img
-                                                    alt="VNR202 quiz practice"
-                                                    className="theme-boximg-img lazy"
-                                                    data-src={oldQuizBadge}
-                                                    src={oldQuizBadge}
-                                                    style={{
-                                                      maxWidth: "800px",
-                                                    }}
-                                                  />
-                                                </div>
-                                                <div className="vtable-wrapp">
-                                                  <div className="vtable">
-                                                    <div className="vtable-cell">
-                                                      <div className="box-content">
-                                                        <h4
-                                                          className="box-title pbtsize-1 fwglobal lhglobal"
-                                                          style={{
-                                                            fontSize: "1.4rem",
-                                                          }}
-                                                        >
-                                                          <span className="box-title-text">
-                                                            Trắc nghiệm VNR202
-                                                          </span>
-                                                        </h4>
-                                                        <div className="box-desc">
-                                                          Rèn giũa trí tuệ qua
-                                                          từng câu hỏi, khắc
-                                                          sâu mỗi chặng đường
-                                                          lịch sử vẻ vang của
-                                                          Đảng.
-                                                        </div>
-                                                        <span className="theme-boximg-color" />
-                                                        <div className="box-readmore">
-                                                          <Link
-                                                            className="boxlink mb2-pb-btn typeprimary sizenormal rounded-1 btnborder0 fwglobal"
-                                                            to="/quiz"
-                                                            style={{
-                                                              "--mb2-pb-btn-bgcolor":
-                                                                "rgb(45, 106, 79)",
-                                                              "--mb2-pb-btn-bghcolor":
-                                                                "rgb(27, 67, 50)",
-                                                            }}
-                                                          >
-                                                            Bắt đầu ôn tập
-                                                          </Link>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div className="theme-boximg-color" />
-                                              <div
-                                                className="theme-boximg-imgel lazy"
-                                                data-bg={oldQuizBadge}
-                                              >
-                                                <div
-                                                  className="gradient-el gradient-left"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(244, 163, 0, 0.16), rgba(255, 255, 255, 0))",
-                                                  }}
-                                                />
-                                                <div
-                                                  className="gradient-el gradient-right"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(244, 163, 0, 0.16))",
-                                                  }}
-                                                />
-                                              </div>
+                                        <h3 className="vnr-section-title">
+                                          Tôi Luyện Bản Lĩnh Qua Từng Thử Thách
+                                        </h3>
+                                        <p className="vnr-section-desc">
+                                          Hòa quyện lý luận sắc bén, những dấu son lịch sử và trải
+                                          nghiệm ôn luyện sống động — tiếp thêm bản lĩnh để bạn vững
+                                          bước trên con đường Đảng đã chọn.
+                                        </p>
+
+                                        <div className="vnr-feature-cards">
+                                          <Link to="/quiz" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-badge">Trắc nghiệm</div>
+                                            <div className="vnr-feature-card-body">
+                                              <h4>Trắc nghiệm VNR202</h4>
+                                              <p>Rèn giũa trí tuệ qua từng câu hỏi, khắc sâu mỗi chặng đường lịch sử vẻ vang của Đảng.</p>
+                                              <span className="vnr-feature-card-cta">
+                                                Bắt đầu ôn tập <i className="bi bi-arrow-right"></i>
+                                              </span>
                                             </div>
-                                          </div>
-                                          <div className="theme-box el_onmobile1">
-                                            <div
-                                              className="theme-boximg position-relative"
-                                              style={{
-                                                "--mb2-pb-bxborder": "2px",
-                                              }}
-                                            >
-                                              <div className="box-allcontent">
-                                                <div className="box-image">
-                                                  <img
-                                                    alt="VNR202 memory cards"
-                                                    className="theme-boximg-img lazy"
-                                                    data-src={oldFlipBadge}
-                                                    src={oldFlipBadge}
-                                                    style={{
-                                                      maxWidth: "800px",
-                                                    }}
-                                                  />
-                                                </div>
-                                                <div className="vtable-wrapp">
-                                                  <div className="vtable">
-                                                    <div className="vtable-cell">
-                                                      <div className="box-content">
-                                                        <h4
-                                                          className="box-title pbtsize-1 fwglobal lhglobal"
-                                                          style={{
-                                                            fontSize: "1.4rem",
-                                                          }}
-                                                        >
-                                                          <span className="box-title-text">
-                                                            Lật Thẻ VNR202
-                                                          </span>
-                                                        </h4>
-                                                        <div className="box-desc">
-                                                          Lật mở từng trang sử
-                                                          vàng — khắc ghi nhân
-                                                          vật, mốc son và cột
-                                                          mốc hào hùng chỉ
-                                                          trong chớp mắt.
-                                                        </div>
-                                                        <span className="theme-boximg-color" />
-                                                        <div className="box-readmore">
-                                                          <Link
-                                                            className="boxlink mb2-pb-btn typeprimary sizenormal rounded-1 btnborder0 fwglobal"
-                                                            to="/flip"
-                                                            style={{
-                                                              "--mb2-pb-btn-bgcolor":
-                                                                "rgb(45, 106, 79)",
-                                                              "--mb2-pb-btn-bghcolor":
-                                                                "rgb(27, 67, 50)",
-                                                            }}
-                                                          >
-                                                            Chơi thẻ nhớ
-                                                          </Link>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div className="theme-boximg-color" />
-                                              <div
-                                                className="theme-boximg-imgel lazy"
-                                                data-bg={oldFlipBadge}
-                                              >
-                                                <div
-                                                  className="gradient-el gradient-left"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(244, 163, 0, 0.16), rgba(255, 255, 255, 0))",
-                                                  }}
-                                                />
-                                                <div
-                                                  className="gradient-el gradient-right"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(244, 163, 0, 0.16))",
-                                                  }}
-                                                />
-                                              </div>
+                                          </Link>
+
+                                          <Link to="/flip" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-badge">Thẻ nhớ</div>
+                                            <div className="vnr-feature-card-body">
+                                              <h4>Lật Thẻ VNR202</h4>
+                                              <p>Lật mở từng trang sử vàng — khắc ghi nhân vật, mốc son và cột mốc hào hùng chỉ trong chớp mắt.</p>
+                                              <span className="vnr-feature-card-cta">
+                                                Chơi thẻ nhớ <i className="bi bi-arrow-right"></i>
+                                              </span>
                                             </div>
-                                          </div>
-                                          <div className="theme-box el_onmobile1">
-                                            <div
-                                              className="theme-boximg position-relative"
-                                              style={{
-                                                "--mb2-pb-bxbgcolor":
-                                                  "rgba(244, 163, 0, 0.12)",
-                                                "--mb2-pb-bxbocolor":
-                                                  "rgb(244, 163, 0)",
-                                                "--mb2-pb-bxborder": "2px",
-                                              }}
-                                            >
-                                              <div className="box-allcontent">
-                                                <div className="box-image">
-                                                  <img
-                                                    alt="Lưới lửa phòng không route badge"
-                                                    className="theme-boximg-img lazy"
-                                                    data-src={oldTuviBadge}
-                                                    src={oldTuviBadge}
-                                                    style={{
-                                                      maxWidth: "800px",
-                                                    }}
-                                                  />
-                                                </div>
-                                                <div className="vtable-wrapp">
-                                                  <div className="vtable">
-                                                    <div className="vtable-cell">
-                                                      <div className="box-content">
-                                                        <h4
-                                                          className="box-title pbtsize-1 fwglobal lhglobal"
-                                                          style={{
-                                                            fontSize: "1.4rem",
-                                                          }}
-                                                        >
-                                                          <span className="box-title-text">
-                                                            Lưới lửa phòng không
-                                                          </span>
-                                                        </h4>
-                                                        <div className="box-desc">
-                                                          Hóa thân chiến sĩ
-                                                          phòng không, tôi
-                                                          luyện phản xạ và ý
-                                                          chí quyết thắng của
-                                                          quân dân ta.
-                                                        </div>
-                                                        <span className="theme-boximg-color" />
-                                                        <div className="box-readmore">
-                                                          <Link
-                                                            className="boxlink mb2-pb-btn typeprimary sizenormal rounded-1 btnborder0 fwglobal"
-                                                            to="/game"
-                                                            style={{
-                                                              "--mb2-pb-btn-bgcolor":
-                                                                "rgb(244, 163, 0)",
-                                                              "--mb2-pb-btn-bghcolor":
-                                                                "rgb(45, 106, 79)",
-                                                              "--mb2-pb-btn-color":
-                                                                "rgb(27, 43, 31)",
-                                                              "--mb2-pb-btn-hcolor":
-                                                                "rgb(255, 255, 255)",
-                                                            }}
-                                                          >
-                                                            Vào chơi
-                                                          </Link>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div className="theme-boximg-color" />
-                                              <div
-                                                className="theme-boximg-imgel lazy"
-                                                data-bg={oldTuviBadge}
-                                              >
-                                                <div
-                                                  className="gradient-el gradient-left"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(244, 163, 0, 0.16), rgba(255, 255, 255, 0))",
-                                                  }}
-                                                />
-                                                <div
-                                                  className="gradient-el gradient-right"
-                                                  style={{
-                                                    backgroundImage:
-                                                      "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(244, 163, 0, 0.16))",
-                                                  }}
-                                                />
-                                              </div>
+                                          </Link>
+
+                                          <Link to="/game" className="vnr-feature-card">
+                                            <div className="vnr-feature-card-badge">Game</div>
+                                            <div className="vnr-feature-card-body">
+                                              <h4>Lưới lửa phòng không</h4>
+                                              <p>Hóa thân chiến sĩ phòng không, tôi luyện phản xạ và ý chí quyết thắng của quân dân ta.</p>
+                                              <span className="vnr-feature-card-cta">
+                                                Vào chơi <i className="bi bi-arrow-right"></i>
+                                              </span>
                                             </div>
-                                          </div>
+                                          </Link>
                                         </div>
                                       </div>
                                     </div>
@@ -1401,21 +999,8 @@ const MainContent = () => {
                       </div>
                     </div>
 
-                    {/* Page Date */}
-                    <span className="mb2-pb-pagedate sr-only">
-                      Last modified: Friday, 23 May 2025, 12:58 AM
-                    </span>
-
-                    {/* Course Navigation */}
-                    <div className="theme-coursenav flexcols"></div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div className="mb2notices"></div>
       </div>
+    </div>
     </div>
   );
 };

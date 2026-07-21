@@ -107,33 +107,26 @@ const Courses = () => {
   return (
     <div className="lich-su-dang-wrapper container-fluid p-4">
       {/* Header */}
-      <div
-        className="courses-hero position-relative rounded-4 shadow-lg p-4 mb-4 text-center"
-      >
+      <div className="courses-hero position-relative rounded-4 p-5 mb-4 text-center">
         <BackHomeButton />
-        <h1 className="mb-2 fw-bold">
-          <i className="bi bi-book"></i> Chuyên đề VNR202
+        <h1 className="mb-3 fw-bold display-5">
+          <i className="bi bi-book me-2"></i>Chuyên đề VNR202
         </h1>
-        <p className="mb-0 fs-5">
-          <i className="bi bi-lightbulb"></i> Học Lịch sử Đảng Cộng sản Việt Nam theo từng chủ đề
+        <p className="mb-0 fs-5 opacity-75">
+          <i className="bi bi-lightbulb me-2"></i>Học Lịch sử Đảng Cộng sản Việt Nam theo từng chủ đề
         </p>
       </div>
 
       {/* Topic Dropdown Selector */}
-      <div className="bg-white rounded-4 shadow p-4 mb-4">
-        <div
-          htmlFor="topicSelect"
-          className="form-label fw-bold fs-5"
-          style={{ color: "var(--secondary-color)" }}
-        >
-          <i className="bi bi-journal-text"></i> Chọn chuyên đề VNR202:
-        </div>
+      <div className="topic-select-wrap">
+        <label htmlFor="topicSelect">
+          <i className="bi bi-journal-text me-2"></i> Chọn chuyên đề VNR202
+        </label>
         <select
           id="topicSelect"
           className="form-select form-select-lg"
           value={selectedTopic?.id || ""}
           onChange={handleTopicChange}
-          style={{ borderColor: "var(--primary-color)" }}
         >
           <option value="">-- Vui lòng chọn một chuyên đề --</option>
           {coursesData.map((topic, index) => (
@@ -148,16 +141,10 @@ const Courses = () => {
       <div className="row g-4">
         {/* Left Column - Nội dung bài học */}
         <div className="col-lg-7">
-          <div
-            className="bg-white rounded-4 shadow p-4"
-            style={{ minHeight: "500px" }}
-          >
-            <div className="border-bottom pb-3 mb-4">
-              <h3
-                className="mb-0 fw-bold"
-                style={{ color: "var(--secondary-color)" }}
-              >
-                <i className="bi bi-book-half"></i>{" "}
+          <div className="content-card">
+            <div className="content-card-header">
+              <h3 className="mb-0">
+                <i className="bi bi-book-half me-2"></i>
                 {selectedTopic ? selectedTopic.tieu_de : "Nội dung chuyên đề"}
               </h3>
             </div>
@@ -168,12 +155,9 @@ const Courses = () => {
         {/* Right Column */}
         <div className="col-lg-5">
           {/* Câu nói hay */}
-          <div className="quote-box rounded-4 shadow p-4 mb-4">
-            <h5
-              className="mb-3 fw-bold"
-              style={{ color: "var(--secondary-color)" }}
-            >
-              <i className="bi bi-quote"></i> Câu nói hay
+          <div className="quote-box p-4 mb-4">
+            <h5 className="mb-3 fw-bold" style={{ color: "var(--secondary-color)" }}>
+              <i className="bi bi-quote me-2"></i> Câu nói hay
             </h5>
             <p className="fst-italic mb-0">
               {selectedTopic
@@ -183,7 +167,7 @@ const Courses = () => {
           </div>
 
           {/* Ảnh sơ đồ tư duy */}
-          <div className="mindmap-box rounded-4 shadow p-4 d-flex align-items-center justify-content-center">
+          <div className="mindmap-box p-4 d-flex align-items-center justify-content-center">
             {renderMindmap()}
           </div>
         </div>

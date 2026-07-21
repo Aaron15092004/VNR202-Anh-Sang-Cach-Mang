@@ -12,6 +12,7 @@
   --color-border: #dce5dd;
   --color-shadow: rgba(27, 67, 50, 0.22);
   --color-glow: rgba(244, 163, 0, 0.42);
+
   --gradient-primary: linear-gradient(
     135deg,
     var(--color-primary),
@@ -27,6 +28,29 @@
     var(--color-bg),
     var(--color-primary-soft)
   );
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(27, 67, 50, 0.10);
+  --shadow-md: 0 4px 12px rgba(27, 67, 50, 0.12);
+  --shadow-lg: 0 8px 24px rgba(27, 67, 50, 0.14);
+  --shadow-xl: 0 12px 40px rgba(27, 67, 50, 0.18);
+  --shadow-glow: 0 8px 32px rgba(244, 163, 0, 0.30);
+
+  --font-body: 'Roboto Flex', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Lexend', system-ui, -apple-system, sans-serif;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
 }
 
 .vnr-back-home-btn {

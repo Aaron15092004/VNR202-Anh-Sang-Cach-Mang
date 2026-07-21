@@ -4,6 +4,7 @@ import { quizQuestions } from "../data/quizData";
 import logoImg from "../assets/images/logo/logo-dang.svg";
 import bgImg from "../assets/images/background/bg_0.png";
 import clockImg from "../assets/images/clock/clock.png";
+import "../styles/quiz/quiz.css";
 
 const QuizPage = () => {
   // ============ STATE ============
@@ -262,42 +263,27 @@ const QuizPage = () => {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="form_btn position-absolute z-3">
-                  <a
-                    className="prev_btn border-0 text-uppercase overflow-hidden rounded-pill text-white me-3 d-inline-flex align-items-center"
-                    style={{
-                      display: currentQuestion === 0 ? "none" : "inline-flex",
-                    }}
-                    onClick={handlePrev}
-                    role="button"
-                  >
-                    <span>
-                      <i className="bi bi-arrow-left-circle-fill rounded-pill"></i>
-                    </span>
-                    Câu trước
-                  </a>
+                <div className="form_btn">
+                  {currentQuestion > 0 && (
+                    <button className="prev_btn" onClick={handlePrev}>
+                      <i className="bi bi-arrow-left"></i>
+                      Câu trước
+                    </button>
+                  )}
 
-                  <a
-                    className="next_btn border-0 text-uppercase overflow-hidden rounded-pill text-white d-inline-flex align-items-center"
-                    onClick={handleNext}
-                    role="button"
-                  >
+                  <button className="next_btn" onClick={handleNext}>
                     {currentQuestion === totalQuestions - 1 ? (
                       <>
-                        {"\u00A0".repeat(8)}Nộp bài{"\u00A0".repeat(7)}
-                        <span>
-                          <i className="bi bi-check-circle-fill rounded-pill"></i>
-                        </span>
+                        Nộp bài
+                        <i className="bi bi-check-circle"></i>
                       </>
                     ) : (
                       <>
                         Câu tiếp
-                        <span>
-                          <i className="bi bi-arrow-right-circle-fill rounded-pill"></i>
-                        </span>
+                        <i className="bi bi-arrow-right"></i>
                       </>
                     )}
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -323,69 +309,55 @@ const QuizPage = () => {
                 </div>
 
                 {/* Options */}
-                <div className="row text-center form_items">
-                  {currentData.options.map((option, index) => (
-                    <div key={index} className="col-md-6 py-3">
-                      <label
-                        className={`bg-white overflow-hidden rounded-pill text-center ${
-                          selectedAnswer === index ? "active" : ""
-                        }`}
-                        onClick={() => handleSelectAnswer(index)}
-                      >
-                        {option}
-                        <input
-                          type="radio"
-                          name={`question_${currentQuestion}`}
-                          value={option}
-                          checked={selectedAnswer === index}
-                          onChange={() => {}}
-                          style={{ display: "none" }}
-                        />
-                      </label>
-                    </div>
-                  ))}
+                <div className="form_items">
+                  <div className="row">
+                    {currentData.options.map((option, index) => (
+                      <div key={index} className="col-md-6 mb-3">
+                        <label
+                          className={`quiz-option ${selectedAnswer === index ? "active" : ""}`}
+                          onClick={() => handleSelectAnswer(index)}
+                        >
+                          <span>{option}</span>
+                          <input
+                            type="radio"
+                            name={`question_${currentQuestion}`}
+                            value={option}
+                            checked={selectedAnswer === index}
+                            onChange={() => {}}
+                          />
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Progress Bar */}
-              <div className="row justify-content-center align-items-center pt-5">
-                <div className="col-md-8">
-                  {/* Progress */}
-                  <div className="step_progress_bar">
-                    <div className="progress rounded-pill">
-                      <div
-                        className="progress-bar rounded-pill overflow-hidden"
-                        role="progressbar"
-                        style={{ width: `${progress}%` }}
-                        aria-valuenow={progress}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        {Math.round(progress)}%
-                      </div>
-                    </div>
+              <div className="d-flex justify-content-center pt-4 pb-5">
+                <div className="progress-wrap">
+                  <div className="progress">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: `${progress}%` }}
+                      aria-valuenow={progress}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    />
                   </div>
 
-                  {/* Steps */}
-                  <div className="steps_number d-flex justify-content-around">
+                  <div className="steps_number">
                     {filteredQuestions.map((_, index) => (
-                      <div
-                        key={index}
-                        className="step d-flex flex-column align-items-center position-relative text-center"
-                      >
+                      <div key={index} className="step">
                         <span
-                          className={`text-white position-absolute rounded-pill ${
-                            index <= currentQuestion ? "active" : ""
-                          } ${index < currentQuestion ? "finish" : ""}`}
+                          className={`${index <= currentQuestion ? "active" : ""} ${index < currentQuestion ? "finish" : ""}`}
                         >
                           {index + 1}
                         </span>
                         <p
-                          className={`pt-4 ${
-                            index <= currentQuestion ? "active" : ""
-                          } ${index < currentQuestion ? "finish" : ""}`}
+                          className={`${index <= currentQuestion ? "active" : ""} ${index < currentQuestion ? "finish" : ""}`}
                         >
-                          Câu hỏi
+                          Câu {index + 1}
                         </p>
                       </div>
                     ))}

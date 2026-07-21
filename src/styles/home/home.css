@@ -8927,3 +8927,155 @@ body,
     transform: none !important;
   }
 }
+
+/* ====== VNR202 Redesign: Section Typography ====== */
+.vnr-section-label {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 36px;
+}
+
+.vnr-section-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.vnr-section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-deep);
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+
+.vnr-section-desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
+
+/* ====== VNR202 Redesign: Feature Cards ====== */
+.vnr-feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.vnr-feature-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.vnr-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+  text-decoration: none;
+  color: inherit;
+}
+
+.vnr-feature-card-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(45, 106, 79, 0.10);
+  padding: 6px 14px;
+  margin: 20px 20px 0;
+  border-radius: var(--radius-full);
+}
+
+.vnr-feature-card-body {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.vnr-feature-card-body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary-deep);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.vnr-feature-card-body p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.vnr-feature-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 4px;
+  transition: gap 0.2s ease;
+}
+
+.vnr-feature-card:hover .vnr-feature-card-cta {
+  gap: 12px;
+  color: var(--color-primary-deep);
+}
+
+.vnr-feature-card-cta i {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.vnr-feature-card:hover .vnr-feature-card-cta i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 992px) {
+  .vnr-feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .vnr-feature-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .vnr-section-title {
+    font-size: 1.5rem;
+  }
+}
