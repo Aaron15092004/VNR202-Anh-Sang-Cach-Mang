@@ -879,10 +879,49 @@
   box-shadow: var(--shadow-xl);
 }
 
-.dbp-chapter-scene svg {
+.dbp-chapter-scene {
+  position: relative;
+}
+
+.dbp-chapter-scene-img {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.dbp-chapter-scene-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(27,43,31,0.8));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.dbp-chapter-scene-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.dbp-chapter-scene-date {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.dbp-hero-story-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .dbp-chapter-content {

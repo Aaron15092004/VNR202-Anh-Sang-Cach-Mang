@@ -1587,101 +1587,27 @@ function HistorySection() {
 /* ─── Scene Illustrations ─── */
 
 function ChapterScene({ type, date }) {
+  const sceneImages = {
+    attack: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Xung_phong.jpg",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Vietminh_a_Dien_Bien_Phu.jpg",
+    battle: "https://upload.wikimedia.org/wikipedia/commons/6/69/Dien_Bien_Phu_1954_French_prisoners.jpg",
+    star: "https://upload.wikimedia.org/wikipedia/commons/8/88/B%E1%BB%99_%C4%91%E1%BB%99i_sinh_ho%E1%BA%A1t_trong_chi%E1%BA%BFn_h%C3%A0o.jpg",
+    victory: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg/1280px-Victory_in_Battle_of_Dien_Bien_Phu.jpg",
+  };
+  const sceneLabels = {
+    attack: "Mở màn chiến dịch",
+    flag: "Chiếm lĩnh cứ điểm",
+    battle: "Giao tranh ác liệt",
+    star: "Cao trào chiến dịch",
+    victory: "CHIẾN THẮNG!",
+  };
   return (
     <div className="dbp-chapter-scene">
-      {type === "attack" && (
-        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <rect width="400" height="280" rx="16" fill="url(#atk-grad)" />
-          <defs><linearGradient id="atk-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="100%" stopColor="#2d3a2d" /></linearGradient></defs>
-          <path d="M0 200 Q100 180 200 210 T400 200 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.6" />
-          <path d="M0 220 Q120 200 240 230 T400 220 L400 280 L0 280 Z" fill="#2d4a3a" opacity="0.5" />
-          <circle cx="320" cy="80" r="20" fill="#f4a300" opacity="0.3" />
-          <circle cx="340" cy="60" r="14" fill="#f4a300" opacity="0.2" />
-          <circle cx="300" cy="55" r="10" fill="#f4a300" opacity="0.15" />
-          <path d="M60 200 Q80 160 100 140 Q120 120 140 100" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.5" />
-          <path d="M80 200 Q100 155 120 130 Q140 105 160 85" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.5" />
-          <rect x="30" y="190" width="40" height="30" rx="4" fill="#2d6a4f" stroke="#40916c" strokeWidth="1" />
-          <rect x="38" y="180" width="24" height="14" rx="2" fill="#1b4332" />
-          <line x1="50" y1="180" x2="50" y2="155" stroke="#40916c" strokeWidth="1.5" />
-          <circle cx="50" cy="153" r="3" fill="#f4a300" opacity="0.8" />
-          <rect x="230" y="160" width="35" height="50" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <polygon points="230,160 247,145 265,160" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <circle cx="247" cy="130" r="5" fill="#f4a300" opacity="0.9" />
-          <path d="M247 125 L247 100" stroke="#d98a00" strokeWidth="2" />
-          <rect x="120" y="170" width="80" height="6" rx="3" fill="#40916c" opacity="0.4" />
-          <rect x="120" y="178" width="80" height="6" rx="3" fill="#40916c" opacity="0.3" />
-          <rect x="120" y="186" width="80" height="6" rx="3" fill="#40916c" opacity="0.2" />
-          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Mở màn chiến dịch · {date}</text>
-        </svg>
-      )}
-      {type === "flag" && (
-        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <rect width="400" height="280" rx="16" fill="url(#fl-grad)" />
-          <defs><linearGradient id="fl-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#2d6a4f" /><stop offset="100%" stopColor="#1b4332" /></linearGradient></defs>
-          <path d="M0 200 Q100 175 200 195 T400 190 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.5" />
-          <circle cx="80" cy="70" r="18" fill="#f4a300" opacity="0.15" />
-          <circle cx="120" cy="80" r="12" fill="#d98a00" opacity="0.1" />
-          <rect x="30" y="180" width="8" height="40" rx="2" fill="#7a6a4f" />
-          <rect x="20" y="170" width="28" height="18" rx="2" fill="#b3261e" />
-          <circle cx="34" cy="179" r="4" fill="#f4a300" />
-          <path d="M240 180 Q260 140 280 160 Q300 180 320 160 Q340 140 350 170" stroke="#f4a300" strokeWidth="2" fill="none" opacity="0.6" />
-          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Chiếm lĩnh cứ điểm · {date}</text>
-        </svg>
-      )}
-      {type === "battle" && (
-        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <rect width="400" height="280" rx="16" fill="url(#bt-grad)" />
-          <defs><linearGradient id="bt-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3d1f1a" /><stop offset="100%" stopColor="#1b2b1f" /></linearGradient></defs>
-          <circle cx="340" cy="60" r="25" fill="#f4a300" opacity="0.2" />
-          <circle cx="360" cy="45" r="15" fill="#f4a300" opacity="0.15" />
-          <path d="M0 210 Q80 190 160 215 T320 210 L400 200 L400 280 L0 280 Z" fill="#2d3a2d" opacity="0.7" />
-          <path d="M0 230 Q100 210 200 235 T400 225 L400 280 L0 280 Z" fill="#1b2b1f" opacity="0.6" />
-          <path d="M80 200 L120 130" stroke="#d98a00" strokeWidth="3" strokeDasharray="6 4" opacity="0.4" />
-          <path d="M140 200 L180 120" stroke="#d98a00" strokeWidth="3" strokeDasharray="6 4" opacity="0.4" />
-          <path d="M60 200 L100 140" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.3" />
-          <rect x="280" y="155" width="50" height="55" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <polygon points="280,155 305,138 330,155" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <circle cx="305" cy="120" r="6" fill="#d98a00" opacity="0.8" />
-          <rect x="160" y="180" width="60" height="8" rx="4" fill="#40916c" opacity="0.3" />
-          <rect x="160" y="190" width="60" height="8" rx="4" fill="#40916c" opacity="0.2" />
-          <text x="200" y="260" fill="#b07a6a" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Giao tranh ác liệt · {date}</text>
-        </svg>
-      )}
-      {type === "star" && (
-        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <rect width="400" height="280" rx="16" fill="url(#st-grad)" />
-          <defs><linearGradient id="st-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="100%" stopColor="#2d3a2d" /></linearGradient></defs>
-          <path d="M0 210 Q100 185 200 205 T400 200 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.5" />
-          <path d="M0 230 Q120 210 240 230 T400 225 L400 280 L0 280 Z" fill="#2d4a3a" opacity="0.4" />
-          <circle cx="320" cy="55" r="30" fill="#f4a300" opacity="0.25" />
-          <circle cx="340" cy="40" r="18" fill="#f4a300" opacity="0.15" />
-          <circle cx="310" cy="35" r="12" fill="#d98a00" opacity="0.1" />
-          <rect x="150" y="175" width="50" height="40" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <polygon points="150,175 175,158 200,175" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
-          <path d="M175 158 L175 120" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.6" />
-          <circle cx="175" cy="115" r="5" fill="#f4a300" opacity="0.9" />
-          <circle cx="175" cy="115" r="14" fill="#f4a300" opacity="0.15" />
-          <path d="M175 115 L155 95" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
-          <path d="M175 115 L195 95" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
-          <path d="M175 115 L175 90" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
-          <rect x="165" y="215" width="20" height="14" rx="2" fill="#f4a300" opacity="0.1" />
-          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Cao trào chiến dịch · {date}</text>
-        </svg>
-      )}
-      {type === "victory" && (
-        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <rect width="400" height="280" rx="16" fill="url(#vic-grad)" />
-          <defs><linearGradient id="vic-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="60%" stopColor="#2d6a4f" /><stop offset="100%" stopColor="#40916c" /></linearGradient></defs>
-          <circle cx="320" cy="50" r="35" fill="#f4a300" opacity="0.2" />
-          <circle cx="340" cy="35" r="20" fill="#f4a300" opacity="0.12" />
-          <path d="M0 220 Q100 200 200 215 T400 210 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.4" />
-          <path d="M200 210 L200 160" stroke="#f4a300" strokeWidth="3" opacity="0.7" />
-          <path d="M170 185 Q200 155 230 185" stroke="#f4a300" strokeWidth="3" fill="none" opacity="0.8" />
-          <rect x="185" y="190" width="30" height="30" rx="2" fill="#1b4332" />
-          <circle cx="200" cy="205" r="5" fill="#f4a300" />
-          <text x="200" y="260" fill="#95d5b2" fontSize="12" textAnchor="middle" fontFamily="system-ui" fontWeight="700">CHIẾN THẮNG! · {date}</text>
-        </svg>
-      )}
+      <img src={sceneImages[type]} alt={sceneLabels[type]} className="dbp-chapter-scene-img" loading="lazy" />
+      <div className="dbp-chapter-scene-overlay">
+        <span className="dbp-chapter-scene-label">{sceneLabels[type]}</span>
+        <span className="dbp-chapter-scene-date">{date}</span>
+      </div>
     </div>
   );
 }
@@ -1703,14 +1629,17 @@ function StatStoryIcon({ index }) {
 /* ─── Hero Avatar ─── */
 
 function HeroAvatarIcon2({ index }) {
-  const colors = ["#2d6a4f", "#d98a00", "#b3261e", "#40916c", "#1b4332"];
-  const c = colors[index % colors.length];
+  const heroImages = [
+    "https://upload.wikimedia.org/wikipedia/commons/a/ac/Mr._Vo_Nguyen_Giap.jpg",
+    "https://imgnvsk.vnanet.vn/MediaUpload/Content/2024/04/10/anh-1-r10-13-39-11.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/55/Timbre_Phan_dinh_giot.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/29/B%E1%BA%BF_V%C4%83n_%C4%90%C3%A0n.jpg",
+    "https://vanhoavaphattrien.vn/uploads/images/blog/photongbientap/2022/11/30/dh1q2-1669769936.jpg",
+  ];
+  const heroNames = ["Võ Nguyên Giáp", "Tô Vĩnh Diện", "Phan Đình Giót", "Bế Văn Đàn", "Trần Can"];
   return (
-    <div className="dbp-hero-story-avatar-circle" style={{ background: c }}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-      </svg>
+    <div className="dbp-hero-story-avatar-circle">
+      <img src={heroImages[index]} alt={heroNames[index]} className="dbp-hero-story-avatar-img" loading="lazy" />
     </div>
   );
 }
