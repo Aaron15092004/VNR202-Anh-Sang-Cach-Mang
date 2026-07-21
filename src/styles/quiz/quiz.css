@@ -8,12 +8,22 @@
 
 .steps_area {
   width: 28%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.image_holder {
+  flex: 1;
+  overflow: hidden;
 }
 
 .image_holder img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -179,10 +189,14 @@ label.quiz-option.active::before {
 }
 
 .form_btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-top: 32px;
+  z-index: 10;
 }
 
 .prev_btn,
@@ -222,8 +236,10 @@ label.quiz-option.active::before {
 }
 
 .form_logo {
+  position: absolute;
   top: 24px;
   left: 24px;
+  z-index: 10;
 }
 
 .form_logo img {
@@ -234,7 +250,16 @@ label.quiz-option.active::before {
 @media (max-width: 992px) {
   .steps_area {
     width: 100%;
-    position: static;
+    position: relative;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .form_btn {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .form_wrapper {
