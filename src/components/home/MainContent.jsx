@@ -477,8 +477,8 @@ const MainContent = () => {
                                           <Link to="/game" className="vnr-feature-card">
                                             <div className="vnr-feature-card-badge">Game</div>
                                             <div className="vnr-feature-card-body">
-                                              <h4>Lưới lửa phòng không</h4>
-                                              <p>Hóa thân chiến sĩ phòng không, tôi luyện phản xạ và ý chí quyết thắng của quân dân ta.</p>
+                                              <h4>Pháo Binh Điện Biên</h4>
+                                              <p>Điều khiển pháo binh, tiêu diệt cứ điểm Him Lam, Đồi A1 và hầm De Castries trong chiến dịch Điện Biên Phủ.</p>
                                               <span className="vnr-feature-card-cta">
                                                 Vào chơi <i className="bi bi-arrow-right"></i>
                                               </span>

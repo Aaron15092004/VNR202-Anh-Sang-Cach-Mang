@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import QuizPage from "./pages/QuizPage";
 import QuizResultsPage from "./pages/QuizResultsPage";
 import FlipCardPage from "./pages/FlipCardPage";
-import GamePage from "./pages/GamePage";
+import ArtilleryGame from "./pages/ArtilleryGame";
 import Courses from "./pages/Courses";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 
         <Route path="/flip" element={<FlipCardPage />} />
 
-        <Route path="/game" element={<GamePage />} />
+        <Route path="/game" element={<ArtilleryGame />} />
         <Route path="/tuvi" element={<Navigate to="/game" replace />} />
 
         <Route path="/courses" element={<Courses />} />
