@@ -79,6 +79,21 @@
   white-space: nowrap;
 }
 
+.dbp-chip-stat {
+  min-width: 80px;
+  justify-content: center;
+}
+
+.dbp-chip-level {
+  min-width: 100px;
+  justify-content: center;
+}
+
+.dbp-chip-val {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
 .dbp-dot {
   display: inline-block;
   width: 8px;
@@ -99,7 +114,11 @@
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow-md);
-  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.15s ease;
+}
+.dbp-btn-primary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 .dbp-btn-primary:hover {
   transform: translateY(-1px);
@@ -126,6 +145,36 @@
 }
 .dbp-btn-ghost:active {
   transform: scale(0.97);
+}
+.dbp-btn-ghost:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.dbp-btn-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+.dbp-btn-icon:hover {
+  background: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+.dbp-btn-icon:active {
+  transform: scale(0.92);
+}
+.dbp-btn-icon:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .dbp-btn-full {
@@ -257,8 +306,13 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.15s ease;
   font-family: inherit;
+}
+.dbp-level-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-accent);
 }
 .dbp-level-card:hover {
   transform: translateY(-2px);
@@ -326,6 +380,8 @@
 .dbp-end-title {
   font-size: 1.5rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
 }
 
 .dbp-end-subtitle {

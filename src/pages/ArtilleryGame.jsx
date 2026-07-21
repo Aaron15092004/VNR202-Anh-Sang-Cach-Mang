@@ -1216,15 +1216,15 @@ export default function ArtilleryGame() {
             </div>
           </div>
           <div className="dbp-header-right">
-            <span className="dbp-chip"><Dot /> {LEVELS[levelIdx].name}</span>
+            <span className="dbp-chip dbp-chip-level"><Dot /> {LEVELS[levelIdx].name}</span>
             {screen === "playing" && (
               <>
-                <span className="dbp-chip">🎯 {destroyedCount}/{targetsHUD.length}</span>
-                <span className="dbp-chip">💥 {score} đ</span>
-                <span className="dbp-chip">🧨 {ammo}/10</span>
-                <span className="dbp-chip">📐 {angleHUD}°</span>
+                <span className="dbp-chip dbp-chip-stat"><TargetIcon /> <span className="dbp-chip-val">{destroyedCount}/{targetsHUD.length}</span></span>
+                <span className="dbp-chip dbp-chip-stat"><ScoreIcon /> <span className="dbp-chip-val">{score}</span></span>
+                <span className="dbp-chip dbp-chip-stat"><AmmoIcon /> <span className="dbp-chip-val">{ammo}/10</span></span>
+                <span className="dbp-chip dbp-chip-stat"><AngleIcon /> <span className="dbp-chip-val">{angleHUD}°</span></span>
                 <span
-                  className="dbp-chip"
+                  className="dbp-chip dbp-chip-stat"
                   style={
                     charging
                       ? {
@@ -1235,21 +1235,21 @@ export default function ArtilleryGame() {
                       : undefined
                   }
                 >
-                  ⚡ {powerHUD}%
+                  <PowerIcon /> <span className="dbp-chip-val">{powerHUD}%</span>
                 </span>
                 <WindChip wind={wind} />
               </>
             )}
-            <button className="dbp-btn-ghost" onClick={toggleMute} aria-label="Mute">
-              {muted ? "🔇" : "🔊"}
+            <button className="dbp-btn-icon" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"}>
+              {muted ? <MuteIcon /> : <UnmuteIcon />}
             </button>
             {screen === "playing" && (
               <>
-                <button className="dbp-btn-ghost" onClick={() => setPaused((p) => !p)}>
-                  {paused ? "▶︎" : "⏸"}
+                <button className="dbp-btn-icon" onClick={() => setPaused((p) => !p)} aria-label={paused ? "Resume" : "Pause"}>
+                  {paused ? <PlayIcon /> : <PauseIcon />}
                 </button>
-                <button className="dbp-btn-ghost" onClick={restart}>
-                  ↺
+                <button className="dbp-btn-icon" onClick={restart} aria-label="Restart">
+                  <RestartIcon />
                 </button>
               </>
             )}
@@ -1331,7 +1331,7 @@ export default function ArtilleryGame() {
 
           {screen === "victory" && endStats && (
             <EndModal
-              title="🎖 Chiến thắng!"
+              title={<><MedalIcon /> Chiến thắng!</>}
               stats={endStats}
               onPrimary={levelIdx < LEVELS.length - 1 ? nextLevel : restart}
               primaryLabel={levelIdx < LEVELS.length - 1 ? "Màn tiếp theo" : "Chơi lại"}
@@ -1429,17 +1429,135 @@ function WindChip({ wind }) {
   const val = Math.abs(wind).toFixed(1);
   return (
     <span
-      className="dbp-chip"
+      className="dbp-chip dbp-chip-stat"
       style={{ background: "var(--gradient-accent)", color: "#1b2b1f", borderColor: "transparent" }}
       title="Gió (m/s)"
     >
-      🌬 {dir} {val} m/s
+      <WindIcon /> <span className="dbp-chip-val">{dir} {val} m/s</span>
     </span>
   );
 }
 
 function Dot() {
   return <span className="dbp-dot" />;
+}
+
+function TargetIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </svg>
+  );
+}
+
+function ScoreIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
+    </svg>
+  );
+}
+
+function AmmoIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="9" y1="13" x2="15" y2="13" />
+    </svg>
+  );
+}
+
+function AngleIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20V10" />
+      <path d="M18 20V4" />
+      <path d="M6 20v-4" />
+    </svg>
+  );
+}
+
+function PowerIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+    </svg>
+  );
+}
+
+function WindIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2" />
+    </svg>
+  );
+}
+
+function UnmuteIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+    </svg>
+  );
+}
+
+function MuteIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <line x1="23" y1="9" x2="17" y2="15" />
+      <line x1="17" y1="9" x2="23" y2="15" />
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6" y="4" width="4" height="16" />
+      <rect x="14" y="4" width="4" height="16" />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="5 3 19 12 5 21 5 3" />
+    </svg>
+  );
+}
+
+function RestartIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="23 4 23 10 17 10" />
+      <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
+    </svg>
+  );
+}
+
+function LightbulbIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 18h6" />
+      <path d="M10 22h4" />
+      <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 008.91 14" />
+    </svg>
+  );
+}
+
+function MedalIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: 8 }}>
+      <circle cx="12" cy="8" r="6" />
+      <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+    </svg>
+  );
 }
 
 function CannonIcon({ large = false }) {
@@ -1489,7 +1607,7 @@ function EndModal({
         </div>
         {stats.hint && (
           <div className="dbp-end-hint">
-            💡 <b>Gợi ý:</b> {stats.hint}
+            <LightbulbIcon /> <b>Gợi ý:</b> {stats.hint}
           </div>
         )}
         <div className="dbp-end-fact">
