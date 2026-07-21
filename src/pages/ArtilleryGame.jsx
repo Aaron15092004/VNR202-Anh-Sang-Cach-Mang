@@ -1507,58 +1507,74 @@ const CAMPAIGN_STATS = [
 function HistorySection() {
   return (
     <section className="dbp-history">
-      <div className="dbp-history-inner">
-        {/* Header */}
-        <div className="dbp-history-header">
-          <h2 className="dbp-history-title">Chiến dịch Điện Biên Phủ 1954</h2>
-          <p className="dbp-history-subtitle">
-            "Lừng lẫy năm châu, chấn động địa cầu" — Hồ Chí Minh
+
+      {/* ─── Hero Banner ─── */}
+      <div className="dbp-history-hero">
+        <div className="dbp-history-hero-bg" />
+        <div className="dbp-history-hero-content">
+          <div className="dbp-history-hero-badge">CHIẾN DỊCH LỊCH SỬ</div>
+          <h2 className="dbp-history-hero-title">Điện Biên Phủ <span className="dbp-text-accent">1954</span></h2>
+          <p className="dbp-history-hero-quote">
+            "Lừng lẫy năm châu, chấn động địa cầu"
+          </p>
+          <p className="dbp-history-hero-author">— Hồ Chí Minh —</p>
+          <div className="dbp-history-hero-divider" />
+          <p className="dbp-history-hero-desc">
+            56 ngày đêm khoét núi, ngủ hầm, mưa dầm, cơm vắt. Máu trộn bùn non, gan không núng, chí không mòn.
           </p>
         </div>
+      </div>
 
-        {/* Stats */}
-        <div className="dbp-history-stats">
-          {CAMPAIGN_STATS.map((s) => (
-            <div key={s.label} className="dbp-history-stat-card">
-              <div className="dbp-history-stat-value">{s.value}</div>
-              <div className="dbp-history-stat-label">{s.label}</div>
-            </div>
-          ))}
+      <div className="dbp-history-body">
+
+        {/* ─── Stats Infographic ─── */}
+        <div className="dbp-stats-infographic">
+          <h3 className="dbp-section-label">NHỮNG CON SỐ</h3>
+          <div className="dbp-stats-grid-story">
+            {CAMPAIGN_STATS.map((s, i) => (
+              <div key={s.label} className="dbp-stat-story-card" style={{ animationDelay: `${i * 80}ms` }}>
+                <StatStoryIcon index={i} />
+                <div className="dbp-stat-story-value">{s.value}</div>
+                <div className="dbp-stat-story-label">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Timeline */}
-        <div className="dbp-timeline">
+        {/* ─── Timeline Chapters ─── */}
+        <div className="dbp-chapters">
+          <h3 className="dbp-section-label">DIỄN BIẾN CHIẾN DỊCH</h3>
           {TIMELINE_EVENTS.map((evt, i) => (
-            <div key={i} className="dbp-timeline-row">
-              <div className="dbp-timeline-marker">
-                <div className="dbp-timeline-dot">
-                  <TimelineIcon type={evt.icon} />
-                </div>
-                {i < TIMELINE_EVENTS.length - 1 && <div className="dbp-timeline-line" />}
+            <div key={i} className={`dbp-chapter ${i % 2 === 0 ? "dbp-chapter--even" : "dbp-chapter--odd"}`}>
+              <div className="dbp-chapter-illustration">
+                <ChapterScene type={evt.icon} date={evt.date} />
               </div>
-              <div className="dbp-timeline-card">
-                <div className="dbp-timeline-date">{evt.date}</div>
-                <h3 className="dbp-timeline-title">{evt.title}</h3>
-                <p className="dbp-timeline-desc">{evt.desc}</p>
+              <div className="dbp-chapter-content">
+                <div className="dbp-chapter-number">Chặng {i + 1}</div>
+                <div className="dbp-chapter-date">{evt.date}</div>
+                <h3 className="dbp-chapter-title">{evt.title}</h3>
+                <p className="dbp-chapter-desc">{evt.desc}</p>
+                <div className="dbp-chapter-line" />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Heroes */}
-        <div className="dbp-heroes">
-          <h3 className="dbp-heroes-heading">Anh hùng trong chiến dịch</h3>
-          <div className="dbp-heroes-grid">
+        {/* ─── Heroes ─── */}
+        <div className="dbp-heroes-story">
+          <h3 className="dbp-section-label">ANH HÙNG TRONG CHIẾN DỊCH</h3>
+          <div className="dbp-heroes-story-grid">
             {HEROES.map((h) => (
-              <div key={h.name} className="dbp-hero-card">
-                <div className="dbp-hero-avatar">
-                  <HeroAvatarIcon />
+              <div key={h.name} className="dbp-hero-story-card">
+                <div className="dbp-hero-story-avatar">
+                  <HeroAvatarIcon2 index={HEROES.indexOf(h)} />
                 </div>
-                <div className="dbp-hero-info">
-                  <div className="dbp-hero-name">{h.name}</div>
-                  <div className="dbp-hero-title">{h.title}</div>
-                  <p className="dbp-hero-desc">{h.desc}</p>
+                <div className="dbp-hero-story-info">
+                  <div className="dbp-hero-story-name">{h.name}</div>
+                  <div className="dbp-hero-story-role">{h.title}</div>
+                  <p className="dbp-hero-story-desc">{h.desc}</p>
                 </div>
+                <div className="dbp-hero-story-number">{(HEROES.indexOf(h) + 1).toString().padStart(2, "0")}</div>
               </div>
             ))}
           </div>
@@ -1568,30 +1584,134 @@ function HistorySection() {
   );
 }
 
-function TimelineIcon({ type }) {
-  const props = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" };
-  switch (type) {
-    case "attack":
-      return <svg {...props}><path d="M12 2v20M2 12h20" /><path d="M6 6l12 12M18 6l-12 12" /></svg>;
-    case "flag":
-      return <svg {...props}><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /><line x1="4" y1="22" x2="4" y2="15" /></svg>;
-    case "battle":
-      return <svg {...props}><path d="M20 6l-8 4-8-4 8-4 8 4z" /><path d="M12 10v8" /><path d="M4 6v4c0 2.2 3.6 4 8 4s8-1.8 8-4V6" /></svg>;
-    case "star":
-      return <svg {...props}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
-    case "victory":
-      return <svg {...props}><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>;
-    default:
-      return <svg {...props}><circle cx="12" cy="12" r="10" /></svg>;
-  }
+/* ─── Scene Illustrations ─── */
+
+function ChapterScene({ type, date }) {
+  return (
+    <div className="dbp-chapter-scene">
+      {type === "attack" && (
+        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="400" height="280" rx="16" fill="url(#atk-grad)" />
+          <defs><linearGradient id="atk-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="100%" stopColor="#2d3a2d" /></linearGradient></defs>
+          <path d="M0 200 Q100 180 200 210 T400 200 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.6" />
+          <path d="M0 220 Q120 200 240 230 T400 220 L400 280 L0 280 Z" fill="#2d4a3a" opacity="0.5" />
+          <circle cx="320" cy="80" r="20" fill="#f4a300" opacity="0.3" />
+          <circle cx="340" cy="60" r="14" fill="#f4a300" opacity="0.2" />
+          <circle cx="300" cy="55" r="10" fill="#f4a300" opacity="0.15" />
+          <path d="M60 200 Q80 160 100 140 Q120 120 140 100" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.5" />
+          <path d="M80 200 Q100 155 120 130 Q140 105 160 85" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.5" />
+          <rect x="30" y="190" width="40" height="30" rx="4" fill="#2d6a4f" stroke="#40916c" strokeWidth="1" />
+          <rect x="38" y="180" width="24" height="14" rx="2" fill="#1b4332" />
+          <line x1="50" y1="180" x2="50" y2="155" stroke="#40916c" strokeWidth="1.5" />
+          <circle cx="50" cy="153" r="3" fill="#f4a300" opacity="0.8" />
+          <rect x="230" y="160" width="35" height="50" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <polygon points="230,160 247,145 265,160" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <circle cx="247" cy="130" r="5" fill="#f4a300" opacity="0.9" />
+          <path d="M247 125 L247 100" stroke="#d98a00" strokeWidth="2" />
+          <rect x="120" y="170" width="80" height="6" rx="3" fill="#40916c" opacity="0.4" />
+          <rect x="120" y="178" width="80" height="6" rx="3" fill="#40916c" opacity="0.3" />
+          <rect x="120" y="186" width="80" height="6" rx="3" fill="#40916c" opacity="0.2" />
+          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Mở màn chiến dịch · {date}</text>
+        </svg>
+      )}
+      {type === "flag" && (
+        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="400" height="280" rx="16" fill="url(#fl-grad)" />
+          <defs><linearGradient id="fl-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#2d6a4f" /><stop offset="100%" stopColor="#1b4332" /></linearGradient></defs>
+          <path d="M0 200 Q100 175 200 195 T400 190 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.5" />
+          <circle cx="80" cy="70" r="18" fill="#f4a300" opacity="0.15" />
+          <circle cx="120" cy="80" r="12" fill="#d98a00" opacity="0.1" />
+          <rect x="30" y="180" width="8" height="40" rx="2" fill="#7a6a4f" />
+          <rect x="20" y="170" width="28" height="18" rx="2" fill="#b3261e" />
+          <circle cx="34" cy="179" r="4" fill="#f4a300" />
+          <path d="M240 180 Q260 140 280 160 Q300 180 320 160 Q340 140 350 170" stroke="#f4a300" strokeWidth="2" fill="none" opacity="0.6" />
+          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Chiếm lĩnh cứ điểm · {date}</text>
+        </svg>
+      )}
+      {type === "battle" && (
+        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="400" height="280" rx="16" fill="url(#bt-grad)" />
+          <defs><linearGradient id="bt-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3d1f1a" /><stop offset="100%" stopColor="#1b2b1f" /></linearGradient></defs>
+          <circle cx="340" cy="60" r="25" fill="#f4a300" opacity="0.2" />
+          <circle cx="360" cy="45" r="15" fill="#f4a300" opacity="0.15" />
+          <path d="M0 210 Q80 190 160 215 T320 210 L400 200 L400 280 L0 280 Z" fill="#2d3a2d" opacity="0.7" />
+          <path d="M0 230 Q100 210 200 235 T400 225 L400 280 L0 280 Z" fill="#1b2b1f" opacity="0.6" />
+          <path d="M80 200 L120 130" stroke="#d98a00" strokeWidth="3" strokeDasharray="6 4" opacity="0.4" />
+          <path d="M140 200 L180 120" stroke="#d98a00" strokeWidth="3" strokeDasharray="6 4" opacity="0.4" />
+          <path d="M60 200 L100 140" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.3" />
+          <rect x="280" y="155" width="50" height="55" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <polygon points="280,155 305,138 330,155" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <circle cx="305" cy="120" r="6" fill="#d98a00" opacity="0.8" />
+          <rect x="160" y="180" width="60" height="8" rx="4" fill="#40916c" opacity="0.3" />
+          <rect x="160" y="190" width="60" height="8" rx="4" fill="#40916c" opacity="0.2" />
+          <text x="200" y="260" fill="#b07a6a" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Giao tranh ác liệt · {date}</text>
+        </svg>
+      )}
+      {type === "star" && (
+        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="400" height="280" rx="16" fill="url(#st-grad)" />
+          <defs><linearGradient id="st-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="100%" stopColor="#2d3a2d" /></linearGradient></defs>
+          <path d="M0 210 Q100 185 200 205 T400 200 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.5" />
+          <path d="M0 230 Q120 210 240 230 T400 225 L400 280 L0 280 Z" fill="#2d4a3a" opacity="0.4" />
+          <circle cx="320" cy="55" r="30" fill="#f4a300" opacity="0.25" />
+          <circle cx="340" cy="40" r="18" fill="#f4a300" opacity="0.15" />
+          <circle cx="310" cy="35" r="12" fill="#d98a00" opacity="0.1" />
+          <rect x="150" y="175" width="50" height="40" rx="3" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <polygon points="150,175 175,158 200,175" fill="#5a4634" stroke="#7a6a4f" strokeWidth="1" />
+          <path d="M175 158 L175 120" stroke="#d98a00" strokeWidth="2" strokeDasharray="4 3" opacity="0.6" />
+          <circle cx="175" cy="115" r="5" fill="#f4a300" opacity="0.9" />
+          <circle cx="175" cy="115" r="14" fill="#f4a300" opacity="0.15" />
+          <path d="M175 115 L155 95" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
+          <path d="M175 115 L195 95" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
+          <path d="M175 115 L175 90" stroke="#f4a300" strokeWidth="1.5" opacity="0.5" />
+          <rect x="165" y="215" width="20" height="14" rx="2" fill="#f4a300" opacity="0.1" />
+          <text x="200" y="260" fill="#8fb198" fontSize="11" textAnchor="middle" fontFamily="system-ui" fontWeight="500">Cao trào chiến dịch · {date}</text>
+        </svg>
+      )}
+      {type === "victory" && (
+        <svg width="100%" height="100%" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="400" height="280" rx="16" fill="url(#vic-grad)" />
+          <defs><linearGradient id="vic-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1b4332" /><stop offset="60%" stopColor="#2d6a4f" /><stop offset="100%" stopColor="#40916c" /></linearGradient></defs>
+          <circle cx="320" cy="50" r="35" fill="#f4a300" opacity="0.2" />
+          <circle cx="340" cy="35" r="20" fill="#f4a300" opacity="0.12" />
+          <path d="M0 220 Q100 200 200 215 T400 210 L400 280 L0 280 Z" fill="#3a5b46" opacity="0.4" />
+          <path d="M200 210 L200 160" stroke="#f4a300" strokeWidth="3" opacity="0.7" />
+          <path d="M170 185 Q200 155 230 185" stroke="#f4a300" strokeWidth="3" fill="none" opacity="0.8" />
+          <rect x="185" y="190" width="30" height="30" rx="2" fill="#1b4332" />
+          <circle cx="200" cy="205" r="5" fill="#f4a300" />
+          <text x="200" y="260" fill="#95d5b2" fontSize="12" textAnchor="middle" fontFamily="system-ui" fontWeight="700">CHIẾN THẮNG! · {date}</text>
+        </svg>
+      )}
+    </div>
+  );
 }
 
-function HeroAvatarIcon() {
+/* ─── Stat Story Icons ─── */
+
+function StatStoryIcon({ index }) {
+  const icons = [
+    <svg key="0" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>,
+    <svg key="1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z" /></svg>,
+    <svg key="2" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+    <svg key="3" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /><line x1="4" y1="22" x2="4" y2="15" /></svg>,
+    <svg key="4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+    <svg key="5" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+  ];
+  return <div className="dbp-stat-story-icon">{icons[index] || icons[0]}</div>;
+}
+
+/* ─── Hero Avatar ─── */
+
+function HeroAvatarIcon2({ index }) {
+  const colors = ["#2d6a4f", "#d98a00", "#b3261e", "#40916c", "#1b4332"];
+  const c = colors[index % colors.length];
   return (
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
-    </svg>
+    <div className="dbp-hero-story-avatar-circle" style={{ background: c }}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    </div>
   );
 }
 
