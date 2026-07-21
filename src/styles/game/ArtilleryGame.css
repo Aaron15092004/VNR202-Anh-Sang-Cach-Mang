@@ -34,19 +34,14 @@
 .dbp-header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
-.dbp-logo-icon {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-lg);
-  color: #fbfbf7;
-  background: var(--gradient-primary);
-  box-shadow: var(--shadow-md);
+.dbp-site-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .dbp-title {

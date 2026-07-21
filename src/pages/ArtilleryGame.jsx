@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import BackHomeButton from "../components/common/BackHomeButton";
+import logoDang from "../assets/images/logo/logo-dang.svg";
 import "../styles/game/ArtilleryGame.css";
 
 const LEVELS = [
@@ -1200,13 +1202,12 @@ export default function ArtilleryGame() {
   };
 
   return (
-    <div className="dbp-game-shell">
+        <div className="dbp-game-shell">
       <header className="dbp-header">
         <div className="dbp-header-inner">
           <div className="dbp-header-left">
-            <div className="dbp-logo-icon">
-              <CannonIcon />
-            </div>
+            <BackHomeButton variant="inline" />
+            <img src={logoDang} alt="Ánh Sáng Của Đảng" className="dbp-site-logo" />
             <div>
               <h1 className="dbp-title">PHÁO BINH ĐIỆN BIÊN</h1>
               <p className="dbp-subtitle">
