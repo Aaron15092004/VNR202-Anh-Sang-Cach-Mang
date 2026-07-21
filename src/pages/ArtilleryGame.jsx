@@ -1408,10 +1408,190 @@ export default function ArtilleryGame() {
         </div>
       </main>
 
+      {/* ─── Lịch sử Điện Biên Phủ ─── */}
+      <HistorySection />
+
       <footer className="dbp-footer">
         Tư liệu giáo dục · Tôn vinh chiến thắng Điện Biên Phủ 7/5/1954 · Bộ đội Pháo binh Việt Nam.
       </footer>
     </div>
+  );
+}
+
+/* ─── Dữ liệu lịch sử ─── */
+
+const TIMELINE_EVENTS = [
+  {
+    date: "13/3/1954",
+    title: "Mở màn chiến dịch",
+    desc: "Quân ta tấn công tiêu diệt cứ điểm Him Lam — cửa ngõ phía Bắc tập đoàn cứ điểm. Sau 5 giờ chiến đấu, lá cờ 'Quyết chiến Quyết thắng' tung bay trên nóc hầm Him Lam.",
+    icon: "attack",
+  },
+  {
+    date: "14-15/3/1954",
+    title: "Đồi Độc Lập",
+    desc: "Trung đoàn 88 và 165 đánh chiếm đồi Độc Lập. Bộ đội ta chiến đấu dũng cảm, tiêu diệt gần 500 quân địch, bắt sống 200 tên.",
+    icon: "flag",
+  },
+  {
+    date: "30/3 - 4/4/1954",
+    title: "Đợt tiến công thứ hai",
+    desc: "Đánh chiếm các cứ điểm phía Đông: đồi A1, C1, D1, E. Đây là những trận đánh ác liệt nhất, giành giật từng tấc đất. Riêng đồi A1 kéo dài 39 ngày đêm.",
+    icon: "battle",
+  },
+  {
+    date: "9-10/4/1954",
+    title: "Đồi C1",
+    desc: "Sau hai ngày chiến đấu không khoan nhượng, quân ta làm chủ hoàn toàn đồi C1. Địch phản kích nhiều lần nhưng đều bị đẩy lùi.",
+    icon: "flag",
+  },
+  {
+    date: "1/5/1954",
+    title: "Đợt tiến công thứ ba",
+    desc: "Quân ta mở đợt tổng công kích vào các cứ điểm còn lại: đồi A1, C2, 506, 311. Pháo binh bắn dồn dập, bộ binh xung phong từ nhiều hướng.",
+    icon: "attack",
+  },
+  {
+    date: "6/5/1954",
+    title: "Đồi A1 — Cao trào",
+    desc: "Đại tướng Võ Nguyên Giáp hạ lệnh nổ khối thuốc nổ gần 1.000kg dưới hầm ngầm đồi A1. Tiếng nổ rung chuyển cả lòng chảo, mở đường cho bộ đội xung phong chiếm đồi.",
+    icon: "star",
+  },
+  {
+    date: "7/5/1954",
+    title: "Chiến thắng lịch sử",
+    desc: "17h30, lá cờ 'Quyết chiến Quyết thắng' tung bay trên nóc hầm De Castries. Tướng De Castries cùng toàn bộ Bộ Tham mưu tập đoàn cứ điểm bị bắt sống. Chiến dịch toàn thắng!",
+    icon: "victory",
+  },
+];
+
+const HEROES = [
+  {
+    name: "Võ Nguyên Giáp",
+    title: "Đại tướng, Tổng Tư lệnh",
+    desc: "Người chỉ huy tài ba, quyết định chuyển phương châm từ 'đánh nhanh thắng nhanh' sang 'đánh chắc tiến chắc' — quyết định lịch sử làm nên chiến thắng.",
+  },
+  {
+    name: "Tô Vĩnh Diện",
+    title: "Anh hùng Pháo binh",
+    desc: "Lấy thân mình chèn pháo, cứu khẩu pháo 105mm khỏi lăn xuống vực sâu. Hy sinh anh dũng năm 1953 trong chiến dịch kéo pháo ra trận địa.",
+  },
+  {
+    name: "Phan Đình Giót",
+    title: "Anh hùng Phòng không",
+    desc: "Lấy thân mình lấp lỗ châu mai mở đường cho đơn vị xung phong ngày 13/3/1954 tại cứ điểm Him Lam.",
+  },
+  {
+    name: "Bế Văn Đàn",
+    title: "Anh hùng Bộ binh",
+    desc: "Nhặt súng đồng đội đã hy sinh, dùng vai làm giá súng bắn máy bay địch. Anh dũng hy sinh trong tư thế tay vẫn ghì chặt khẩu súng.",
+  },
+  {
+    name: "Trần Can",
+    title: "Anh hùng Công binh",
+    desc: "Chỉ huy đào hầm ngầm 1.000kg thuốc nổ vào lòng đồi A1, tạo nên tiếng nổ long trời mở đường cho đợt tổng công kích cuối cùng.",
+  },
+];
+
+const CAMPAIGN_STATS = [
+  { value: "56", label: "Ngày đêm chiến đấu" },
+  { value: "16.200", label: "Quân địch tiêu diệt" },
+  { value: "55.000", label: "Bộ đội tham gia" },
+  { value: "260.000", label: "Dân công hỏa tuyến" },
+  { value: "~1.000kg", label: "Thuốc nổ lòng đồi A1" },
+  { value: "7/5/1954", label: "Ngày toàn thắng" },
+];
+
+/* ─── Component Lịch sử ─── */
+
+function HistorySection() {
+  return (
+    <section className="dbp-history">
+      <div className="dbp-history-inner">
+        {/* Header */}
+        <div className="dbp-history-header">
+          <h2 className="dbp-history-title">Chiến dịch Điện Biên Phủ 1954</h2>
+          <p className="dbp-history-subtitle">
+            "Lừng lẫy năm châu, chấn động địa cầu" — Hồ Chí Minh
+          </p>
+        </div>
+
+        {/* Stats */}
+        <div className="dbp-history-stats">
+          {CAMPAIGN_STATS.map((s) => (
+            <div key={s.label} className="dbp-history-stat-card">
+              <div className="dbp-history-stat-value">{s.value}</div>
+              <div className="dbp-history-stat-label">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Timeline */}
+        <div className="dbp-timeline">
+          {TIMELINE_EVENTS.map((evt, i) => (
+            <div key={i} className="dbp-timeline-row">
+              <div className="dbp-timeline-marker">
+                <div className="dbp-timeline-dot">
+                  <TimelineIcon type={evt.icon} />
+                </div>
+                {i < TIMELINE_EVENTS.length - 1 && <div className="dbp-timeline-line" />}
+              </div>
+              <div className="dbp-timeline-card">
+                <div className="dbp-timeline-date">{evt.date}</div>
+                <h3 className="dbp-timeline-title">{evt.title}</h3>
+                <p className="dbp-timeline-desc">{evt.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Heroes */}
+        <div className="dbp-heroes">
+          <h3 className="dbp-heroes-heading">Anh hùng trong chiến dịch</h3>
+          <div className="dbp-heroes-grid">
+            {HEROES.map((h) => (
+              <div key={h.name} className="dbp-hero-card">
+                <div className="dbp-hero-avatar">
+                  <HeroAvatarIcon />
+                </div>
+                <div className="dbp-hero-info">
+                  <div className="dbp-hero-name">{h.name}</div>
+                  <div className="dbp-hero-title">{h.title}</div>
+                  <p className="dbp-hero-desc">{h.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TimelineIcon({ type }) {
+  const props = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" };
+  switch (type) {
+    case "attack":
+      return <svg {...props}><path d="M12 2v20M2 12h20" /><path d="M6 6l12 12M18 6l-12 12" /></svg>;
+    case "flag":
+      return <svg {...props}><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /><line x1="4" y1="22" x2="4" y2="15" /></svg>;
+    case "battle":
+      return <svg {...props}><path d="M20 6l-8 4-8-4 8-4 8 4z" /><path d="M12 10v8" /><path d="M4 6v4c0 2.2 3.6 4 8 4s8-1.8 8-4V6" /></svg>;
+    case "star":
+      return <svg {...props}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
+    case "victory":
+      return <svg {...props}><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>;
+    default:
+      return <svg {...props}><circle cx="12" cy="12" r="10" /></svg>;
+  }
+}
+
+function HeroAvatarIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
   );
 }
 
